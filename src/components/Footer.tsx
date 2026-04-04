@@ -7,7 +7,7 @@ function Footer() {
         {/* Logo */}
 
         <img
-          src="/images/logo.svg"
+          src="/images/logo-white.svg"
           alt="Crawford House Clearance logo"
           className="h-10 mx-auto mb-6 opacity-80"
         />
@@ -41,7 +41,7 @@ function Footer() {
           <div>
 
             <p className="mb-2">
-              Email: admin@crawfordclearance
+              Email: Gary@crawfordhouseclearance.co.uk
             </p>
 
             <p>
