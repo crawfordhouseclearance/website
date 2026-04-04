@@ -17,13 +17,16 @@ export default function Commercial() {
           </h2>
 
           <p className="text-stone-400 mb-6 leading-relaxed">
-            Commercial clearances for offices, shops, warehouses and
-            industrial premises across Central Scotland.
+            From a single unit refit to a full strip-out, we clear furniture, stock,
+            fittings and general waste. We can often work around your hours if the
+            premises are still partly in use—say what you need and we will plan
+            around it.
           </p>
 
           <p className="text-stone-400 leading-relaxed">
-            Furniture, fixtures and waste are cleared, with disposal in
-            line with SEPA requirements. The site is left clear.
+            Everything goes through licensed routes with SEPA-compliant paperwork.
+            When we are finished, floors and access routes are left clear for the next
+            contractor or handover—not blocked with debris.
           </p>
 
         </div>

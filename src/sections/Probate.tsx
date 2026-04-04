@@ -11,15 +11,15 @@ export default function Probate() {
           </h2>
 
           <p className="text-stone-400 leading-relaxed mb-6">
-            Probate clearances are handled with care and respect. We can
-            work with families, solicitors and estate agents, and the
-            property is cleared efficiently during what can be a difficult
-            time.
+            Probate clearances need steady coordination: access, what stays versus what
+            goes, and your timings. We work with you directly or via your solicitor, and
+            we fit around viewings and handovers.
           </p>
 
           <p className="text-stone-400 leading-relaxed">
-            Items are sorted for donation and recycling where possible.
-            Waste transfer documentation is provided for every clearance.
+            Where it helps, we separate usable goods for donation or resale; the rest is
+            cleared and disposed of legally, with waste transfer notes and a clear record
+            of what left the property.
           </p>
 
         </div>

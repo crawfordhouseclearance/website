@@ -11,13 +11,16 @@ export default function Domestic() {
           </h2>
 
           <p className="text-stone-400 mb-6 leading-relaxed">
-            Full and partial house clearances for homeowners, landlords
-            and tenants across Glasgow, Falkirk and Stirling.
+            We clear whole homes or single rooms—lofts, garages and sheds included—
+            for moves, downsizing, bereavement, or between tenancies. Tell us what
+            must remain (fixtures, white goods, specific items) and we work to that
+            list.
           </p>
 
           <p className="text-stone-400 leading-relaxed">
-            Clearances are carried out efficiently and respectfully, with
-            pricing agreed in advance. The property is left clear.
+            You get a fixed scope and price before we start, and the place swept
+            through so it is ready for sale, rent, or your next step—not half-done
+            corners or bags left behind.
           </p>
 
         </div>
