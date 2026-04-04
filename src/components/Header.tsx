@@ -14,7 +14,7 @@ export default function Header() {
             className="h-12 w-auto relative top-[1px] opacity-90 hover:opacity-100 transition"
           />
 
-          <div className="text-sm md:text-base font-semibold tracking-widest text-stone-200">
+          <div className="text-sm md:text-base font-semibold tracking-widest text-text-main">
             CRAWFORD HOUSE CLEARANCE
           </div>
 
@@ -23,7 +23,7 @@ export default function Header() {
 
         {/* Navigation */}
 
-        <nav className="hidden md:flex gap-8 text-sm text-stone-400">
+        <nav className="hidden md:flex gap-8 text-sm text-text-muted">
 
           <a href="#probate" className="hover:text-white transition-colors">
             Probate

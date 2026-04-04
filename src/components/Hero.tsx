@@ -20,14 +20,14 @@ export default function Hero() {
           & Commercial Clearance
         </h1>
 
-        <p className="mt-5 text-stone-200 text-lg leading-relaxed drop-shadow-sm">
+        <p className="mt-5 text-text-main text-lg leading-relaxed drop-shadow-sm">
           Fully insured clearances across Glasgow, Falkirk and Stirling.
           Clear pricing agreed in advance. Work carried out respectfully.
         </p>
 
         <a
           href="#contact"
-          className="inline-block mt-7 bg-[#f3efe6] text-black px-6 py-3 rounded-lg font-medium shadow-sm hover:bg-[#e9e2d6] hover:shadow-md transition-all duration-200"
+          className="inline-block mt-7 bg-cta text-brand-deep px-6 py-3 rounded-lg font-medium shadow-xl shadow-black/50 ring-2 ring-white/35 hover:bg-cta-hover hover:shadow-2xl hover:shadow-black/60 hover:ring-white/50 transition-[background-color,box-shadow,ring-color,ring-opacity] duration-200"
         >
           Request a Quote
         </a>

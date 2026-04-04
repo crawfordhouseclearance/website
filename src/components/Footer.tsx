@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="section-divider mt-24 py-16">
+    <footer className="bg-[var(--color-chrome)] section-divider mt-24 py-16">
 
       <div className="max-w-6xl mx-auto px-6 text-center">
 
@@ -12,11 +12,11 @@ function Footer() {
           className="h-10 mx-auto mb-6 opacity-80"
         />
 
-        <h3 className="text-white font-semibold mb-4">
+        <h3 className="text-text-main font-semibold mb-4">
           Crawford House Clearance
         </h3>
 
-        <p className="text-stone-400 mb-8">
+        <p className="text-text-muted mb-8">
           Probate, domestic and commercial clearances across Central
           Scotland.
         </p>
@@ -24,7 +24,7 @@ function Footer() {
 
         {/* Footer Grid */}
 
-        <div className="grid md:grid-cols-3 gap-10 text-sm text-stone-400">
+        <div className="grid md:grid-cols-3 gap-10 text-sm text-text-muted">
 
           <div>
 
@@ -67,7 +67,7 @@ function Footer() {
 
         {/* Copyright */}
 
-        <div className="mt-12 pt-6 border-t border-white/10 text-xs text-stone-500">
+        <div className="mt-12 pt-6 border-t border-border-soft text-xs text-stone-500">
           © {new Date().getFullYear()} Crawford House Clearance
         </div>
 

@@ -10,11 +10,11 @@ export default function Contact() {
             Contact
           </h2>
 
-          <p className="text-stone-400 mb-4">
+          <p className="text-text-muted mb-4">
             Contact us to request a quote and agree the scope of work.
           </p>
 
-          <p className="text-stone-400">
+          <p className="text-text-muted">
             For domestic clearances, you can send photos on WhatsApp for an
             initial estimate.
           </p>
@@ -28,7 +28,7 @@ export default function Contact() {
 
           <a
             href="tel:07459420152"
-            className="flex-1 text-center bg-[#f3efe6] text-black px-8 py-4 rounded-lg font-semibold hover:bg-[#e9e2d6] transition"
+            className="flex-1 text-center bg-cta text-brand-deep px-8 py-4 rounded-lg font-semibold hover:bg-cta-hover transition"
           >
             Call 07459 420152
           </a>
@@ -55,7 +55,7 @@ export default function Contact() {
         >
 
           <div>
-            <label className="block text-sm text-stone-400 mb-2">
+            <label className="block text-sm text-text-muted mb-2">
               Name
             </label>
 
@@ -63,13 +63,13 @@ export default function Contact() {
               type="text"
               name="Name"
               required
-              className="w-full bg-[#2a3035] border border-white/10 rounded-lg px-4 py-3 text-white"
+              className="w-full bg-input-surface border border-[color:var(--color-input-border)] rounded-lg px-4 py-3 text-white shadow-inner"
             />
           </div>
 
 
           <div>
-            <label className="block text-sm text-stone-400 mb-2">
+            <label className="block text-sm text-text-muted mb-2">
               Email
             </label>
 
@@ -77,26 +77,26 @@ export default function Contact() {
               type="email"
               name="Email"
               required
-              className="w-full bg-[#2a3035] border border-white/10 rounded-lg px-4 py-3 text-white"
+              className="w-full bg-input-surface border border-[color:var(--color-input-border)] rounded-lg px-4 py-3 text-white shadow-inner"
             />
           </div>
 
 
           <div>
-            <label className="block text-sm text-stone-400 mb-2">
+            <label className="block text-sm text-text-muted mb-2">
               Property Location
             </label>
 
             <input
               type="text"
               name="Location"
-              className="w-full bg-[#2a3035] border border-white/10 rounded-lg px-4 py-3 text-white"
+              className="w-full bg-input-surface border border-[color:var(--color-input-border)] rounded-lg px-4 py-3 text-white shadow-inner"
             />
           </div>
 
 
           <div>
-            <label className="block text-sm text-stone-400 mb-2">
+            <label className="block text-sm text-text-muted mb-2">
               Details
             </label>
 
@@ -104,14 +104,14 @@ export default function Contact() {
               name="Message"
               rows={5}
               required
-              className="w-full bg-[#2a3035] border border-white/10 rounded-lg px-4 py-3 text-white"
+              className="w-full bg-input-surface border border-[color:var(--color-input-border)] rounded-lg px-4 py-3 text-white shadow-inner"
             ></textarea>
           </div>
 
 
           <button
             type="submit"
-            className="w-full bg-[#f3efe6] text-black py-4 rounded-lg font-semibold hover:bg-[#e9e2d6] transition"
+            className="w-full bg-cta text-brand-deep py-4 rounded-lg font-semibold hover:bg-cta-hover transition"
           >
             Send Enquiry
           </button>

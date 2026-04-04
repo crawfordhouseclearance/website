@@ -6,6 +6,27 @@
 
 
 /* ===============================
+   BRAND TOKENS
+================================ */
+
+:root {
+  --color-brand: #1e40af;
+  --color-chrome: #0f172a;
+  --color-brand-deep: #172554;
+  --color-surface: #1a2535;
+  --color-surface-elevated: #253149;
+  --color-card: #2f3e56;
+  --color-text: #e7e5e4;
+  --color-text-muted: #94a3b8;
+  --color-border: rgba(148, 163, 184, 0.24);
+  --color-cta: #f5f0e8;
+  --color-cta-hover: #e8e0d4;
+  --color-input: #141b28;
+  --color-input-border: rgba(148, 163, 184, 0.38);
+}
+
+
+/* ===============================
    GLOBAL BASE
 ================================ */
 
@@ -14,8 +35,8 @@ html {
 }
 
 body {
-  background: #191f1c;
-  color: #e7e5e4;
+  background: var(--color-surface);
+  color: var(--color-text);
   @apply font-body;
 }
 
@@ -40,8 +61,8 @@ section[id] {
 ================================ */
 
 .site-surface {
-  background: #191f1c;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: var(--color-chrome);
+  border-bottom: 1px solid var(--color-border);
 }
 
 
@@ -50,7 +71,7 @@ section[id] {
 ================================ */
 
 .section-surface {
-  background: #232824;
+  background: var(--color-surface-elevated);
 }
 
 
@@ -59,7 +80,7 @@ section[id] {
 ================================ */
 
 .section-divider {
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid var(--color-border);
 }
 
 
@@ -68,9 +89,13 @@ section[id] {
 ================================ */
 
 .card-surface {
-  background: #2b322d;
+  background: var(--color-card);
   border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid var(--color-border);
+}
+
+.card-surface:hover {
+  border-color: rgba(148, 163, 184, 0.32);
 }
 
 

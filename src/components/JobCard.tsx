@@ -43,7 +43,7 @@ export default function JobCard({
 
           {category && (
             <div>
-              <span className="inline-flex items-center rounded-full px-3 py-1 text-xs tracking-widest uppercase text-stone-400 border border-white/10 bg-white/5">
+              <span className="inline-flex items-center rounded-full px-3 py-1 text-xs tracking-widest uppercase text-text-muted border border-border-soft bg-white/5">
                 {category}
               </span>
             </div>
@@ -55,14 +55,14 @@ export default function JobCard({
             </h3>
 
             {context && (
-              <p className="text-stone-400 text-sm">
+              <p className="text-text-muted text-sm">
                 {context}
               </p>
             )}
           </div>
 
           {description && (
-            <p className="text-stone-400 text-sm leading-relaxed">
+            <p className="text-text-muted text-sm leading-relaxed">
               {description}
             </p>
           )}
@@ -74,7 +74,7 @@ export default function JobCard({
 
           <button
             onClick={() => setOpen(true)}
-            className="bg-[#f3efe6] text-black px-4 py-2 rounded-lg text-sm font-semibold self-start hover:bg-[#e9e2d6] transition"
+            className="bg-cta text-brand-deep px-4 py-2 rounded-lg text-sm font-semibold self-start hover:bg-cta-hover transition"
           >
             View Details
           </button>
