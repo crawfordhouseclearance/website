@@ -72,7 +72,7 @@ export default function JobModal({
           {images.map((img) => (
             <div
               key={img.src}
-              className="overflow-hidden rounded-lg aspect-[4/5]"
+              className="mx-auto w-full max-w-[320px] overflow-hidden rounded-lg aspect-[5/6]"
             >
               <img
                 src={img.src}
