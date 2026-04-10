@@ -2,7 +2,7 @@ export default function Domestic() {
   return (
     <section id="domestic" className="section-surface py-24">
 
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
 
         <div>
 
@@ -26,11 +26,17 @@ export default function Domestic() {
         </div>
 
 
-        <img
-          src="/images/domestic1.jpg"
-          alt="Domestic house clearance"
-          className="rounded-xl shadow-lg"
-        />
+        <div className="grid grid-cols-2 gap-4">
+
+          <img src="/images/web/service_domestic_1.webp" alt="" className="rounded-lg" />
+
+          <img src="/images/web/service_domestic_2.webp" alt="" className="rounded-lg" />
+
+          <img src="/images/web/service_domestic_03.webp" alt="" className="rounded-lg" />
+
+          <img src="/images/web/service_domestic_04.webp" alt="" className="rounded-lg" />
+
+        </div>
 
       </div>
 

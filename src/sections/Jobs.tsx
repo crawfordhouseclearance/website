@@ -1,53 +1,69 @@
 import JobCard from "../components/JobCard"
+import type { JobModalImage } from "../components/JobModal"
 
 export default function Jobs() {
-  const jobs = [
+  const jobs: ReadonlyArray<{
+    location: string
+    jobType: string
+    category: string
+    context: string
+    description: string
+    previews: readonly [string, string]
+    modalImages: readonly JobModalImage[]
+  }> = [
     {
       location: "Stirling",
       jobType: "Probate Clearance",
       category: "Probate",
-      context: "Full clearance completed. Items sorted for donation and recycling.",
+      context:
+        "Full house clearance completed in Stirling.\nUsable items separated for donation and recycling.\nProperty cleared and left ready for handover.",
       description: "",
-      before: "/images/probate2.jpg",
-      after: "/images/probate1.jpg",
-      details: {
-        additionalDescription: "",
-        beforeNote: "",
-        afterNote: "",
-        extraImages: [],
-      },
+      previews: [
+        "/images/web/case_probate_room_before.webp",
+        "/images/web/case_probate_room_after.webp",
+      ],
+      modalImages: [
+        { src: "/images/web/case_probate_room_before_full.webp", alt: "Before — room" },
+        { src: "/images/web/case_probate_room_after_full.webp", alt: "After — room" },
+        { src: "/images/web/case_probate_bedroom_before_full.webp", alt: "Before — bedroom" },
+        { src: "/images/web/case_probate_bedroom_after_full.webp", alt: "After — bedroom" },
+      ],
     },
     {
       location: "Falkirk",
       jobType: "Domestic Clearance",
       category: "Domestic",
-      context: "Partial clearance completed. Property left ready for new tenants.",
+      context:
+        "Partial domestic clearance completed in Falkirk.\nKitchen and bedroom areas cleared.\nProperty left ready for the next tenant or next step.",
       description: "",
-      before: "/images/domestic2.jpg",
-      after: "/images/domestic1.jpg",
-      details: {
-        additionalDescription: "",
-        beforeNote: "",
-        afterNote: "",
-        extraImages: [],
-      },
+      previews: [
+        "/images/web/case_domestic_kitchen_before.webp",
+        "/images/web/case_domestic_kitchen_after.webp",
+      ],
+      modalImages: [
+        { src: "/images/web/case_domestic_kitchen_before_full.webp", alt: "Before — kitchen" },
+        { src: "/images/web/case_domestic_kitchen_after_full.webp", alt: "After — kitchen" },
+        { src: "/images/web/case_domestic_bedroom_before_full.webp", alt: "Before — bedroom" },
+        { src: "/images/web/case_domestic_bedroom_after_full.webp", alt: "After — bedroom" },
+      ],
     },
     {
       location: "Larbert",
       jobType: "Garage Clearance",
       category: "Commercial",
-      context: "Garage and outbuildings cleared. Waste taken for proper disposal.",
+      context:
+        "Garage and outbuilding clearance completed in Larbert.\nGeneral waste removed through licensed routes.\nSpace left clear and usable again.",
       description: "",
-      before: "/images/commercial3.jpg",
-      after: "/images/commercial1.jpg",
-      details: {
-        additionalDescription: "",
-        beforeNote: "",
-        afterNote: "",
-        extraImages: [],
-      },
+      previews: [
+        "/images/web/case_garage_02_before.webp",
+        "/images/web/case_garage_02_after.webp",
+      ],
+      modalImages: [
+        { src: "/images/web/case_garage_02_before_full.webp", alt: "Before — garage" },
+        { src: "/images/web/case_garage_02_after_full.webp", alt: "After — garage" },
+      ],
     },
-  ] as const
+  ]
 
   return (
     <section id="jobs" className="section-surface py-24">
@@ -68,9 +84,8 @@ export default function Jobs() {
               category={job.category}
               context={job.context}
               description={job.description}
-              before={job.before}
-              after={job.after}
-              details={job.details}
+              previews={job.previews}
+              modalImages={job.modalImages}
             />
           ))}
 

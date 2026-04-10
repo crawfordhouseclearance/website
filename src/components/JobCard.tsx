@@ -1,15 +1,5 @@
 import { useState } from "react"
-import JobModal from "./JobModal"
-
-export type JobCardDetails = {
-  additionalDescription?: string
-  beforeNote?: string
-  afterNote?: string
-  extraImages?: Array<{
-    src: string
-    alt?: string
-  }>
-}
+import JobModal, { type JobModalImage } from "./JobModal"
 
 type JobCardProps = {
   location: string
@@ -17,9 +7,10 @@ type JobCardProps = {
   category?: string
   context?: string
   description?: string
-  before: string
-  after: string
-  details?: JobCardDetails
+  /** Two preview thumbnails on the card */
+  previews: readonly [string, string]
+  /** Full-size images for the modal (same job only) */
+  modalImages: readonly JobModalImage[]
 }
 
 export default function JobCard({
@@ -28,16 +19,27 @@ export default function JobCard({
   category,
   context,
   description,
-  before,
-  after,
-  details,
+  previews,
+  modalImages,
 }: JobCardProps) {
 
   const [open, setOpen] = useState(false)
+  const [previewBefore, previewAfter] = previews
 
   return (
     <>
-      <div className="card-surface overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl">
+      <div
+        className="card-surface overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+        onClick={() => setOpen(true)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault()
+            setOpen(true)
+          }
+        }}
+        role="button"
+        tabIndex={0}
+      >
 
         <div className="p-6 flex flex-col h-full gap-4">
 
@@ -55,7 +57,7 @@ export default function JobCard({
             </h3>
 
             {context && (
-              <p className="text-text-muted text-sm">
+              <p className="text-text-muted text-sm whitespace-pre-line">
                 {context}
               </p>
             )}
@@ -68,16 +70,15 @@ export default function JobCard({
           )}
 
           <div className="grid grid-cols-2 gap-3">
-            <img src={before} className="rounded-lg" />
-            <img src={after} className="rounded-lg" />
+            <img src={previewBefore} alt="" className="rounded-lg w-full h-auto object-cover" />
+            <img src={previewAfter} alt="" className="rounded-lg w-full h-auto object-cover" />
           </div>
 
-          <button
-            onClick={() => setOpen(true)}
-            className="bg-cta text-brand-deep px-4 py-2 rounded-lg text-sm font-semibold self-start hover:bg-cta-hover transition"
+          <span
+            className="bg-cta text-brand-deep px-4 py-2 rounded-lg text-sm font-semibold self-start hover:bg-cta-hover transition pointer-events-none"
           >
             View Details
-          </button>
+          </span>
 
         </div>
 
@@ -87,9 +88,9 @@ export default function JobCard({
         <JobModal
           location={location}
           jobType={jobType}
+          context={context}
           description={description}
-          before={before}
-          after={after}
+          images={modalImages}
           onClose={() => setOpen(false)}
         />
       )}

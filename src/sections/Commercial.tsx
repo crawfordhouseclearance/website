@@ -2,13 +2,20 @@ export default function Commercial() {
   return (
     <section id="commercial" className="py-24">
 
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
 
-        <img
-          src="/images/commercial1.jpg"
-          alt="Commercial clearance"
-          className="rounded-xl shadow-lg"
-        />
+        <div className="grid grid-cols-2 gap-4">
+
+
+          <img src="/images/web/service_commercial_01.webp" alt="" className="rounded-lg" />
+
+          <img src="/images/web/service_commercial_02.webp" alt="" className="rounded-lg" />
+
+          <img src="/images/web/service_commercial_03.webp" alt="" className="rounded-lg" />
+
+          <img src="/images/web/service_commercial_04.webp" alt="" className="rounded-lg" />
+
+        </div>
 
         <div>
 

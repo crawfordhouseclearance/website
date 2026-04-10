@@ -27,13 +27,9 @@ export default function Probate() {
 
         <div className="grid grid-cols-2 gap-4">
 
-          <img src="/images/probate1.jpg" className="rounded-lg" />
+          <img src="/images/web/service_probate_01.webp" alt="" className="rounded-lg" />
 
-          <img src="/images/probate2.jpg" className="rounded-lg" />
-
-          <img src="/images/probate3.jpg" className="rounded-lg" />
-
-          <img src="/images/probate4.jpg" className="rounded-lg" />
+          <img src="/images/web/service_probate_04.webp" alt="" className="rounded-lg" />
 
         </div>
 
