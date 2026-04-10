@@ -50,7 +50,7 @@ export default function Contact() {
         {/* Contact Form */}
 
         <form
-          action="mailto:admin@crawfordclearance"
+          action="mailto:gary@crawfordhouseclearance.co.uk"
           method="post"
           encType="text/plain"
           className="space-y-6 max-w-2xl mx-auto"

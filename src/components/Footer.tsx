@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function Footer() {
   return (
     <footer className="bg-[var(--color-chrome)] section-divider mt-24 py-16">
@@ -41,7 +43,7 @@ function Footer() {
           <div>
 
             <p className="mb-2">
-              Email: Gary@crawfordhouseclearance.co.uk
+              Email: gary@crawfordhouseclearance.co.uk
             </p>
 
             <p>
@@ -69,6 +71,15 @@ function Footer() {
 
         <div className="mt-12 pt-6 border-t border-border-soft text-xs text-stone-500">
           © {new Date().getFullYear()} Crawford House Clearance
+          <span className="mx-2" aria-hidden="true">
+            ·
+          </span>
+          <Link
+            to="/privacy"
+            className="text-stone-500 hover:text-stone-400 underline-offset-2 hover:underline"
+          >
+            Privacy Policy
+          </Link>
         </div>
 
       </div>

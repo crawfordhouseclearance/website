@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Footer from "./components/Footer"
@@ -7,9 +8,13 @@ import Probate from "./sections/Probate"
 import Domestic from "./sections/Domestic"
 import Commercial from "./sections/Commercial"
 import Jobs from "./sections/Jobs"
+import WorkingWithProfessionals from "./sections/WorkingWithProfessionals"
 import Contact from "./sections/Contact"
+import Privacy from "./pages/Privacy"
+import EbayAuthAccepted from "./pages/EbayAuthAccepted"
+import EbayAuthDeclined from "./pages/EbayAuthDeclined"
 
-export default function App() {
+function Home() {
   return (
     <>
       <Header />
@@ -28,11 +33,26 @@ export default function App() {
 
         <Jobs />
 
+        <WorkingWithProfessionals />
+
         <Contact />
 
       </main>
 
       <Footer />
     </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/ebay/auth/accepted" element={<EbayAuthAccepted />} />
+        <Route path="/ebay/auth/declined" element={<EbayAuthDeclined />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
