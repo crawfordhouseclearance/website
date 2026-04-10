@@ -6,7 +6,16 @@ export default function Header() {
 
         {/* Logo + Title */}
 
-        <a href="#" className="flex items-center gap-4">
+        <a
+          href="/"
+          className="flex items-center gap-4"
+          onClick={(e) => {
+            if (window.location.pathname === "/") {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: "smooth" })
+            }
+          }}
+        >
 
           <img
             src="/images/logo-white.svg"
@@ -27,23 +36,38 @@ export default function Header() {
 
           <nav className="hidden md:flex gap-8 text-sm text-text-muted">
 
-            <a href="#probate" className="hover:text-white transition-colors">
+            <a
+              href="/#probate"
+              className="hover:text-white transition-colors"
+            >
               Probate
             </a>
 
-            <a href="#domestic" className="hover:text-white transition-colors">
+            <a
+              href="/#domestic"
+              className="hover:text-white transition-colors"
+            >
               Domestic
             </a>
 
-            <a href="#commercial" className="hover:text-white transition-colors">
+            <a
+              href="/#commercial"
+              className="hover:text-white transition-colors"
+            >
               Commercial
             </a>
 
-            <a href="#jobs" className="hover:text-white transition-colors">
+            <a
+              href="/#jobs"
+              className="hover:text-white transition-colors"
+            >
               Jobs
             </a>
 
-            <a href="#contact" className="hover:text-white transition-colors">
+            <a
+              href="/#contact"
+              className="hover:text-white transition-colors"
+            >
               Contact
             </a>
 
