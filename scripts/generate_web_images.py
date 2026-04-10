@@ -1,5 +1,5 @@
 """
-One-off WebP generation from public/images/launch sources.
+One-off WebP generation from assets/website-launch-sources PNGs.
 Max widths; never upscales. Run from repo root: python scripts/generate_web_images.py
 """
 from __future__ import annotations
@@ -10,7 +10,7 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-LAUNCH = ROOT / "public" / "images" / "launch"
+LAUNCH = ROOT / "assets" / "website-launch-sources"
 OUT = ROOT / "public" / "images" / "web"
 
 
