@@ -8,6 +8,7 @@ type JobModalProps = {
   jobType: string
   context?: string
   description?: string
+  details?: string
   images: readonly JobModalImage[]
   onClose: () => void
 }
@@ -17,6 +18,7 @@ export default function JobModal({
   jobType,
   context,
   description,
+  details,
   images,
   onClose,
 }: JobModalProps) {
@@ -60,14 +62,24 @@ export default function JobModal({
           </p>
         ) : null}
 
+        {details ? (
+          <p className="text-stone-400 text-sm leading-relaxed mb-6">
+            {details}
+          </p>
+        ) : null}
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-1">
           {images.map((img) => (
-            <img
+            <div
               key={img.src}
-              src={img.src}
-              alt={img.alt}
-              className="rounded-lg w-full h-auto object-cover"
-            />
+              className="overflow-hidden rounded-lg aspect-[4/5]"
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
           ))}
         </div>
 

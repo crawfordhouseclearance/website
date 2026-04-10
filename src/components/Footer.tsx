@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-
 function Footer() {
   return (
     <footer className="bg-[var(--color-chrome)] section-divider mt-24 py-16">
@@ -74,12 +72,12 @@ function Footer() {
           <span className="mx-2" aria-hidden="true">
             ·
           </span>
-          <Link
-            to="/privacy"
+          <a
+            href="/privacy"
             className="text-stone-500 hover:text-stone-400 underline-offset-2 hover:underline"
           >
             Privacy Policy
-          </Link>
+          </a>
         </div>
 
       </div>
