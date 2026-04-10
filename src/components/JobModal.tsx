@@ -68,11 +68,11 @@ export default function JobModal({
           </p>
         ) : null}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-1">
+        <div className="mt-5 mx-auto grid max-w-[440px] grid-cols-2 gap-3">
           {images.map((img) => (
             <div
               key={img.src}
-              className="mx-auto w-full max-w-[320px] overflow-hidden rounded-lg aspect-[5/6]"
+              className="overflow-hidden rounded-lg aspect-[4/5]"
             >
               <img
                 src={img.src}
