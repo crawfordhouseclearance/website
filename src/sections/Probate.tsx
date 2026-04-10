@@ -1,3 +1,5 @@
+import ServiceSectionGallery from "../components/ServiceSectionGallery"
+
 export default function Probate() {
   return (
     <section id="probate" className="py-24">
@@ -25,13 +27,12 @@ export default function Probate() {
         </div>
 
 
-        <div className="grid grid-cols-2 gap-4">
-
-          <img src="/images/web/service_probate_01.webp" alt="" className="rounded-lg" />
-
-          <img src="/images/web/service_probate_04.webp" alt="" className="rounded-lg" />
-
-        </div>
+        <ServiceSectionGallery
+          images={[
+            "/images/web/service_probate_01.webp",
+            "/images/web/service_probate_04.webp",
+          ]}
+        />
 
       </div>
 

@@ -1,3 +1,5 @@
+import ServiceSectionGallery from "../components/ServiceSectionGallery"
+
 export default function Domestic() {
   return (
     <section id="domestic" className="section-surface py-24">
@@ -26,17 +28,14 @@ export default function Domestic() {
         </div>
 
 
-        <div className="grid grid-cols-2 gap-4">
-
-          <img src="/images/web/service_domestic_1.webp" alt="" className="rounded-lg" />
-
-          <img src="/images/web/service_domestic_2.webp" alt="" className="rounded-lg" />
-
-          <img src="/images/web/service_domestic_03.webp" alt="" className="rounded-lg" />
-
-          <img src="/images/web/service_domestic_04.webp" alt="" className="rounded-lg" />
-
-        </div>
+        <ServiceSectionGallery
+          images={[
+            "/images/web/service_domestic_1.webp",
+            "/images/web/service_domestic_2.webp",
+            "/images/web/service_domestic_03.webp",
+            "/images/web/service_domestic_04.webp",
+          ]}
+        />
 
       </div>
 
