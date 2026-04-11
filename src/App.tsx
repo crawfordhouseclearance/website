@@ -85,23 +85,6 @@ function Home() {
 }
 
 export default function App() {
-  useEffect(() => {
-    // #region agent log
-    fetch("http://127.0.0.1:7522/ingest/5a67757b-9c88-4743-9fdd-c513f0047a20", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "719f15" },
-      body: JSON.stringify({
-        sessionId: "719f15",
-        location: "App.tsx:boot",
-        message: "SPA shell loaded",
-        data: { pathname: window.location.pathname },
-        hypothesisId: "A",
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {});
-    // #endregion
-  }, []);
-
   return (
     <BrowserRouter>
       <Routes>
