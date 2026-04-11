@@ -1,4 +1,6 @@
+import { useEffect } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { applyPageMeta } from "./seo/pageMeta"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Footer from "./components/Footer"
@@ -48,6 +50,10 @@ function LocalBusinessJsonLd() {
 }
 
 function Home() {
+  useEffect(() => {
+    applyPageMeta("home")
+  }, [])
+
   return (
     <>
       <LocalBusinessJsonLd />
