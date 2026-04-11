@@ -30,28 +30,29 @@ export default function JobModal({
     >
 
       <div
-        className="card-surface relative my-4 w-full min-w-0 max-w-3xl max-md:max-h-[calc(100dvh-1.75rem)] max-md:overflow-y-auto max-md:overscroll-contain p-4 md:my-8 md:max-h-none md:overflow-visible md:p-8"
+        className="card-surface relative my-4 w-full min-w-0 max-w-3xl max-md:max-h-[calc(100dvh-1.75rem)] max-md:overflow-y-auto max-md:overscroll-contain px-4 pb-4 pt-3 md:my-8 md:max-h-none md:overflow-visible md:p-8"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
         aria-labelledby="job-modal-title"
       >
 
-        <button
-          type="button"
-          onClick={onClose}
-          className="absolute right-3 top-3 text-xl text-stone-400 hover:text-white md:right-4 md:top-4"
-          aria-label="Close"
-        >
-          ✕
-        </button>
-
-        <h2
-          id="job-modal-title"
-          className="mb-1 pr-9 text-xl font-semibold text-white max-md:min-h-[3.75rem] max-md:leading-snug md:mb-2 md:min-h-0 md:pr-10 md:text-2xl"
-        >
-          {jobType} – {location}
-        </h2>
+        <div className="mb-1 flex flex-row-reverse items-start gap-2 md:mb-2 md:gap-3">
+          <button
+            type="button"
+            onClick={onClose}
+            className="shrink-0 rounded p-1 text-xl leading-none text-stone-400 hover:text-white md:p-1.5"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+          <h2
+            id="job-modal-title"
+            className="min-w-0 flex-1 text-xl font-semibold leading-tight text-white md:text-2xl md:leading-tight"
+          >
+            {jobType} – {location}
+          </h2>
+        </div>
 
         {context && (
           <p className="mb-3 text-sm leading-relaxed text-stone-300 whitespace-pre-line md:mb-4">

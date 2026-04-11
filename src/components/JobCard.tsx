@@ -55,7 +55,7 @@ export default function JobCard({
           )}
 
           <div className="space-y-1 shrink-0">
-            <h3 className="text-lg font-semibold text-white max-md:min-h-[3.25rem] max-md:leading-snug">
+            <h3 className="text-lg font-semibold text-white">
               {jobType} – {location}
             </h3>
 
