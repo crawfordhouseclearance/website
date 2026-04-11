@@ -6,9 +6,9 @@ export default function Hero() {
 
       {/* Background Image */}
       <img
-        src="/images/web/approved-hero.webp"
+        src="/images/web/home-hero-house-clearance.webp"
         className="absolute inset-0 w-full h-full object-cover max-sm:object-[68%_50%] sm:object-[50%_50%] brightness-[0.93] saturate-[0.9]"
-        alt=""
+        alt="Residential property in Central Scotland illustrating house clearance work"
       />
 
       {/* Gradient Overlay */}

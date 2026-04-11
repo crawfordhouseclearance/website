@@ -8,10 +8,22 @@ export default function Commercial() {
 
         <ServiceSectionGallery
           images={[
-            "/images/web/service_commercial_01.webp",
-            "/images/web/service_commercial_02.webp",
-            "/images/web/service_commercial_03.webp",
-            "/images/web/service_commercial_04.webp",
+            {
+              src: "/images/web/service_commercial_01.webp",
+              alt: "Commercial clearance — office or retail interior",
+            },
+            {
+              src: "/images/web/service_commercial_02.webp",
+              alt: "Commercial clearance — unit or stock removal",
+            },
+            {
+              src: "/images/web/service_commercial_03.webp",
+              alt: "Commercial clearance — premises during clearance",
+            },
+            {
+              src: "/images/web/service_commercial_04.webp",
+              alt: "Commercial clearance — waste and materials removed",
+            },
           ]}
         />
 

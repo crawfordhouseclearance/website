@@ -10,6 +10,7 @@ export default function Jobs() {
     description: string
     details: string
     previews: readonly [string, string]
+    previewAlts: readonly [string, string]
     modalImages: readonly JobModalImage[]
   }> = [
     {
@@ -25,11 +26,27 @@ export default function Jobs() {
         "/images/web/case_probate_room_before.webp",
         "/images/web/case_probate_room_after.webp",
       ],
+      previewAlts: [
+        "Before: living room before probate clearance, Stirling",
+        "After: same room cleared, Stirling",
+      ],
       modalImages: [
-        { src: "/images/web/case_probate_room_before_full.webp", alt: "Before — room" },
-        { src: "/images/web/case_probate_room_after_full.webp", alt: "After — room" },
-        { src: "/images/web/case_probate_bedroom_before_full.webp", alt: "Before — bedroom" },
-        { src: "/images/web/case_probate_bedroom_after_full.webp", alt: "After — bedroom" },
+        {
+          src: "/images/web/case_probate_room_before_full.webp",
+          alt: "Before: living room before probate clearance, Stirling",
+        },
+        {
+          src: "/images/web/case_probate_room_after_full.webp",
+          alt: "After: living room cleared, Stirling",
+        },
+        {
+          src: "/images/web/case_probate_bedroom_before_full.webp",
+          alt: "Before: bedroom before probate clearance, Stirling",
+        },
+        {
+          src: "/images/web/case_probate_bedroom_after_full.webp",
+          alt: "After: bedroom cleared, Stirling",
+        },
       ],
     },
     {
@@ -45,11 +62,27 @@ export default function Jobs() {
         "/images/web/case_domestic_kitchen_before.webp",
         "/images/web/case_domestic_kitchen_after.webp",
       ],
+      previewAlts: [
+        "Before: kitchen before domestic clearance, Falkirk",
+        "After: kitchen cleared, Falkirk",
+      ],
       modalImages: [
-        { src: "/images/web/case_domestic_kitchen_before_full.webp", alt: "Before — kitchen" },
-        { src: "/images/web/case_domestic_kitchen_after_full.webp", alt: "After — kitchen" },
-        { src: "/images/web/case_domestic_bedroom_before_full.webp", alt: "Before — bedroom" },
-        { src: "/images/web/case_domestic_bedroom_after_full.webp", alt: "After — bedroom" },
+        {
+          src: "/images/web/case_domestic_kitchen_before_full.webp",
+          alt: "Before: kitchen before domestic clearance, Falkirk",
+        },
+        {
+          src: "/images/web/case_domestic_kitchen_after_full.webp",
+          alt: "After: kitchen cleared, Falkirk",
+        },
+        {
+          src: "/images/web/case_domestic_bedroom_before_full.webp",
+          alt: "Before: bedroom before domestic clearance, Falkirk",
+        },
+        {
+          src: "/images/web/case_domestic_bedroom_after_full.webp",
+          alt: "After: bedroom cleared, Falkirk",
+        },
       ],
     },
     {
@@ -65,9 +98,19 @@ export default function Jobs() {
         "/images/web/case_garage_02_before.webp",
         "/images/web/case_garage_02_after.webp",
       ],
+      previewAlts: [
+        "Before: garage before clearance, Larbert",
+        "After: garage cleared, Larbert",
+      ],
       modalImages: [
-        { src: "/images/web/case_garage_02_before_full.webp", alt: "Before — garage" },
-        { src: "/images/web/case_garage_02_after_full.webp", alt: "After — garage" },
+        {
+          src: "/images/web/case_garage_02_before_full.webp",
+          alt: "Before: garage before clearance, Larbert",
+        },
+        {
+          src: "/images/web/case_garage_02_after_full.webp",
+          alt: "After: garage cleared, Larbert",
+        },
       ],
     },
   ]
@@ -96,6 +139,7 @@ export default function Jobs() {
                 description={job.description}
                 details={job.details}
                 previews={job.previews}
+                previewAlts={job.previewAlts}
                 modalImages={job.modalImages}
               />
             </div>

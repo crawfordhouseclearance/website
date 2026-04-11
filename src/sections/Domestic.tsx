@@ -30,10 +30,22 @@ export default function Domestic() {
 
         <ServiceSectionGallery
           images={[
-            "/images/web/service_domestic_1.webp",
-            "/images/web/service_domestic_2.webp",
-            "/images/web/service_domestic_03.webp",
-            "/images/web/service_domestic_04.webp",
+            {
+              src: "/images/web/service_domestic_1.webp",
+              alt: "Domestic house clearance — kitchen area",
+            },
+            {
+              src: "/images/web/service_domestic_2.webp",
+              alt: "Domestic house clearance — living space",
+            },
+            {
+              src: "/images/web/service_domestic_03.webp",
+              alt: "Domestic house clearance — bedroom or storage area",
+            },
+            {
+              src: "/images/web/service_domestic_04.webp",
+              alt: "Domestic house clearance — cleared interior",
+            },
           ]}
         />
 

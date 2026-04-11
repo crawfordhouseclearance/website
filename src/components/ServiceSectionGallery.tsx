@@ -1,16 +1,16 @@
 type ServiceSectionGalleryProps = {
-  images: readonly string[]
+  images: readonly { src: string; alt: string }[]
 }
 
 export default function ServiceSectionGallery({ images }: ServiceSectionGalleryProps) {
   return (
     <div className="grid grid-cols-2 gap-4">
-      {images.map((src) => (
+      {images.map((item) => (
         <div
-          key={src}
+          key={item.src}
           className="aspect-[4/3] overflow-hidden rounded-lg"
         >
-          <img src={src} alt="" className="h-full w-full object-cover" />
+          <img src={item.src} alt={item.alt} className="h-full w-full object-cover" />
         </div>
       ))}
     </div>

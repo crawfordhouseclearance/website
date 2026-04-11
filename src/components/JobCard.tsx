@@ -11,6 +11,8 @@ type JobCardProps = {
   details?: string
   /** Two preview thumbnails on the card */
   previews: readonly [string, string]
+  /** Alt text for preview thumbnails (before, after) */
+  previewAlts: readonly [string, string]
   /** Full-size images for the modal (same job only) */
   modalImages: readonly JobModalImage[]
 }
@@ -23,11 +25,13 @@ export default function JobCard({
   description,
   details,
   previews,
+  previewAlts,
   modalImages,
 }: JobCardProps) {
 
   const [open, setOpen] = useState(false)
   const [previewBefore, previewAfter] = previews
+  const [previewBeforeAlt, previewAfterAlt] = previewAlts
 
   return (
     <>
@@ -75,8 +79,8 @@ export default function JobCard({
           <div className="flex-1 min-h-0" aria-hidden="true" />
 
           <div className="grid grid-cols-2 gap-3 shrink-0">
-            <img src={previewBefore} alt="" className="rounded-lg w-full aspect-[4/3] object-cover" />
-            <img src={previewAfter} alt="" className="rounded-lg w-full aspect-[4/3] object-cover" />
+            <img src={previewBefore} alt={previewBeforeAlt} className="rounded-lg w-full aspect-[4/3] object-cover" />
+            <img src={previewAfter} alt={previewAfterAlt} className="rounded-lg w-full aspect-[4/3] object-cover" />
           </div>
 
           <span

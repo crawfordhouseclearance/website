@@ -29,8 +29,14 @@ export default function Probate() {
 
         <ServiceSectionGallery
           images={[
-            "/images/web/service_probate_01.webp",
-            "/images/web/service_probate_04.webp",
+            {
+              src: "/images/web/service_probate_01.webp",
+              alt: "Probate house clearance — furnished room interior",
+            },
+            {
+              src: "/images/web/service_probate_04.webp",
+              alt: "Probate house clearance — room cleared and ready for handover",
+            },
           ]}
         />
 
