@@ -26,7 +26,7 @@ function LocalBusinessJsonLd() {
     telephone: "+447459420152",
     email: "gary@crawfordhouseclearance.co.uk",
     logo: "https://www.crawfordhouseclearance.co.uk/images/logo-white.svg",
-    image: "https://www.crawfordhouseclearance.co.uk/images/hero.jpg",
+    image: "https://www.crawfordhouseclearance.co.uk/images/web/home-hero-house-clearance.webp",
     areaServed: [
       "Falkirk",
       "Stirling",
