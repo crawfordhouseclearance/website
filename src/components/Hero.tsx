@@ -1,11 +1,11 @@
 export default function Hero() {
   return (
-    <section className="relative h-[62vh] md:h-[60vh] flex items-center justify-center md:justify-start texture-overlay px-6 sm:px-8 md:pl-16 lg:pl-24 md:pr-10">
+    <section className="relative overflow-hidden h-[62vh] md:h-[60vh] flex items-center justify-center md:justify-start texture-overlay px-6 sm:px-8 md:pl-16 lg:pl-24 md:pr-10">
 
       {/* Background Image */}
       <img
         src="/images/web/approved-hero.webp"
-        className="absolute inset-0 w-full h-full object-cover object-[58%_50%] sm:object-[50%_50%] brightness-[0.93] saturate-[0.9]"
+        className="absolute inset-0 w-full h-full object-cover object-center sm:object-[50%_50%] brightness-[0.93] saturate-[0.9]"
         alt=""
       />
 

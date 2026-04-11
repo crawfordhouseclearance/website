@@ -8,6 +8,7 @@ export default function Jobs() {
     category: string
     context: string
     description: string
+    details: string
     previews: readonly [string, string]
     modalImages: readonly JobModalImage[]
   }> = [
@@ -18,6 +19,8 @@ export default function Jobs() {
       context:
         "Full house clearance completed in Stirling.\nUsable items separated for donation and recycling.\nProperty cleared and left ready for handover.",
       description: "",
+      details:
+        "Access and handover were coordinated around the probate process, with the clearance carried out room by room to keep the property manageable throughout. Usable items were separated where appropriate, general waste was removed through licensed routes, and the house was left cleared and ready for the next stage.",
       previews: [
         "/images/web/case_probate_room_before.webp",
         "/images/web/case_probate_room_after.webp",
@@ -36,6 +39,8 @@ export default function Jobs() {
       context:
         "Partial domestic clearance completed in Falkirk.\nKitchen and bedroom areas cleared.\nProperty left ready for the next tenant or next step.",
       description: "",
+      details:
+        "This clearance focused on the main lived-in areas of the property, with selected rooms cleared, loose contents removed, and the space left in a more usable condition. Waste was taken away through the normal licensed route, and the property was left ready for the owner's next step, whether that meant further cleaning, re-letting, or onward works.",
       previews: [
         "/images/web/case_domestic_kitchen_before.webp",
         "/images/web/case_domestic_kitchen_after.webp",
@@ -54,6 +59,8 @@ export default function Jobs() {
       context:
         "Garage and outbuilding clearance completed in Larbert.\nGeneral waste removed through licensed routes.\nSpace left clear and usable again.",
       description: "",
+      details:
+        "This job involved clearing out the garage and associated storage space, removing mixed household contents and general waste that had built up over time. Bulky items and loose debris were taken away through licensed routes, and the space was left clear, accessible, and usable again.",
       previews: [
         "/images/web/case_garage_02_before.webp",
         "/images/web/case_garage_02_after.webp",
@@ -74,19 +81,24 @@ export default function Jobs() {
           Recent Clearance Jobs
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-10">
+        <div className="flex flex-row gap-6 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-10 md:overflow-visible md:snap-none">
 
           {jobs.map((job) => (
-            <JobCard
+            <div
               key={`${job.jobType}-${job.location}`}
-              location={job.location}
-              jobType={job.jobType}
-              category={job.category}
-              context={job.context}
-              description={job.description}
-              previews={job.previews}
-              modalImages={job.modalImages}
-            />
+              className="shrink-0 snap-center w-[88%] md:w-auto md:min-w-0"
+            >
+              <JobCard
+                location={job.location}
+                jobType={job.jobType}
+                category={job.category}
+                context={job.context}
+                description={job.description}
+                details={job.details}
+                previews={job.previews}
+                modalImages={job.modalImages}
+              />
+            </div>
           ))}
 
         </div>

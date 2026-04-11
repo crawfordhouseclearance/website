@@ -1,6 +1,9 @@
 export default function WorkingWithProfessionals() {
   return (
-    <section id="working-with-professionals" className="py-24">
+    <section
+      id="working-with-professionals"
+      className="section-divider border-b border-border-soft py-28 md:py-32"
+    >
 
       <div className="max-w-4xl mx-auto px-6">
 

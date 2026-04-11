@@ -7,6 +7,8 @@ type JobCardProps = {
   category?: string
   context?: string
   description?: string
+  /** Extended copy shown only in the modal */
+  details?: string
   /** Two preview thumbnails on the card */
   previews: readonly [string, string]
   /** Full-size images for the modal (same job only) */
@@ -19,6 +21,7 @@ export default function JobCard({
   category,
   context,
   description,
+  details,
   previews,
   modalImages,
 }: JobCardProps) {
@@ -90,6 +93,7 @@ export default function JobCard({
           jobType={jobType}
           context={context}
           description={description}
+          details={details}
           images={modalImages}
           onClose={() => setOpen(false)}
         />
