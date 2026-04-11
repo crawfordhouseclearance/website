@@ -1,3 +1,5 @@
+import { useRef, useLayoutEffect } from "react"
+
 export type JobModalImage = {
   src: string
   alt: string
@@ -22,6 +24,40 @@ export default function JobModal({
   images,
   onClose,
 }: JobModalProps) {
+  const modalTitleRef = useRef<HTMLHeadingElement>(null)
+
+  // #region agent log
+  useLayoutEffect(() => {
+    const h2 = modalTitleRef.current
+    const fullTitle = `${jobType} – ${location}`
+    const modalTitleWrapped =
+      h2 != null && h2.scrollHeight > h2.clientHeight + 1
+    fetch("http://127.0.0.1:7522/ingest/5a67757b-9c88-4743-9fdd-c513f0047a20", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Debug-Session-Id": "8a380c",
+      },
+      body: JSON.stringify({
+        sessionId: "8a380c",
+        location: "JobModal.tsx:useLayoutEffect",
+        message: "job modal title metrics",
+        data: {
+          hypothesisId: "H4",
+          viewportInnerWidth:
+            typeof window !== "undefined" ? window.innerWidth : null,
+          jobKey: `${jobType}-${location}`,
+          titleCharLen: fullTitle.length,
+          h2ScrollH: h2?.scrollHeight,
+          h2ClientH: h2?.clientHeight,
+          modalTitleWrapped,
+        },
+        timestamp: Date.now(),
+      }),
+    }).catch(() => {})
+  }, [jobType, location])
+  // #endregion
+
   return (
     <div
       className="fixed inset-0 z-50 flex justify-center overflow-y-auto bg-black/70 p-3 max-md:items-start max-md:pt-[max(0.75rem,env(safe-area-inset-top))] max-md:pb-[max(0.75rem,env(safe-area-inset-bottom))] md:items-center md:p-4"
@@ -46,7 +82,11 @@ export default function JobModal({
           ✕
         </button>
 
-        <h2 id="job-modal-title" className="mb-1 pr-9 text-xl font-semibold text-white max-md:leading-snug md:mb-2 md:pr-10 md:text-2xl">
+        <h2
+          ref={modalTitleRef}
+          id="job-modal-title"
+          className="mb-1 pr-9 text-xl font-semibold text-white max-md:leading-snug md:mb-2 md:pr-10 md:text-2xl"
+        >
           {jobType} – {location}
         </h2>
 
