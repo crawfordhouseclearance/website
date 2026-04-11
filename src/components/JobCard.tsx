@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect } from "react"
+import { useState } from "react"
 import JobModal, { type JobModalImage } from "./JobModal"
 
 type JobCardProps = {
@@ -28,50 +28,10 @@ export default function JobCard({
 
   const [open, setOpen] = useState(false)
   const [previewBefore, previewAfter] = previews
-  const cardRef = useRef<HTMLDivElement>(null)
-  const titleRef = useRef<HTMLHeadingElement>(null)
-  const titleContextStackRef = useRef<HTMLDivElement>(null)
-
-  // #region agent log
-  useLayoutEffect(() => {
-    const card = cardRef.current
-    const titleEl = titleRef.current
-    const stackEl = titleContextStackRef.current
-    const fullTitle = `${jobType} – ${location}`
-    const titleWrapped =
-      titleEl != null && titleEl.scrollHeight > titleEl.clientHeight + 1
-    fetch("http://127.0.0.1:7522/ingest/5a67757b-9c88-4743-9fdd-c513f0047a20", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-Debug-Session-Id": "8a380c",
-      },
-      body: JSON.stringify({
-        sessionId: "8a380c",
-        location: "JobCard.tsx:useLayoutEffect",
-        message: "job card layout metrics",
-        data: {
-          hypothesisId: "H1-H3",
-          viewportInnerWidth:
-            typeof window !== "undefined" ? window.innerWidth : null,
-          jobKey: `${jobType}-${location}`,
-          titleCharLen: fullTitle.length,
-          titleScrollH: titleEl?.scrollHeight,
-          titleClientH: titleEl?.clientHeight,
-          titleWrapped,
-          titleContextStackH: stackEl?.scrollHeight,
-          cardOffsetH: card?.offsetHeight,
-        },
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {})
-  }, [jobType, location])
-  // #endregion
 
   return (
     <>
       <div
-        ref={cardRef}
         className="card-surface overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer flex min-h-0 flex-1 flex-col"
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {
@@ -94,8 +54,8 @@ export default function JobCard({
             </div>
           )}
 
-          <div ref={titleContextStackRef} className="space-y-1 shrink-0">
-            <h3 ref={titleRef} className="text-lg font-semibold text-white">
+          <div className="space-y-1 shrink-0">
+            <h3 className="text-lg font-semibold text-white max-md:min-h-[3.25rem] max-md:leading-snug">
               {jobType} – {location}
             </h3>
 
