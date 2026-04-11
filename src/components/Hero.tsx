@@ -4,7 +4,7 @@ export default function Hero() {
 
       {/* Background Image */}
       <img
-        src="/images/web/hero.webp"
+        src="/images/hero.png"
         className="absolute inset-0 w-full h-full object-cover object-[58%_50%] sm:object-[50%_50%] brightness-[0.93] saturate-[0.9]"
         alt=""
       />
