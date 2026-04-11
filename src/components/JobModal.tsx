@@ -1,5 +1,3 @@
-import { useLayoutEffect, useRef } from "react"
-
 export type JobModalImage = {
   src: string
   alt: string
@@ -24,134 +22,15 @@ export default function JobModal({
   images,
   onClose,
 }: JobModalProps) {
-  const backdropRef = useRef<HTMLDivElement>(null)
-  const panelRef = useRef<HTMLDivElement>(null)
-  const galleryRef = useRef<HTMLDivElement>(null)
-
-  useLayoutEffect(() => {
-    const backdrop = backdropRef.current
-    const panel = panelRef.current
-    const gallery = galleryRef.current
-    if (!backdrop || !panel) return
-
-    const vw = window.innerWidth
-    const vh = window.innerHeight
-    const rect = panel.getBoundingClientRect()
-    const hOverflow = panel.scrollWidth > panel.clientWidth
-    const galleryH = gallery?.offsetHeight ?? 0
-    const textBlockH = Math.max(0, panel.scrollHeight - galleryH - 48)
-
-    // #region agent log
-    fetch("http://127.0.0.1:7522/ingest/5a67757b-9c88-4743-9fdd-c513f0047a20", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "68037d" },
-      body: JSON.stringify({
-        sessionId: "68037d",
-        runId: "pre-fix",
-        hypothesisId: "H1",
-        location: "JobModal.tsx:layout",
-        message: "backdrop vs viewport (flex center scroll)",
-        data: {
-          vw,
-          vh,
-          backdropScrollH: backdrop.scrollHeight,
-          backdropClientH: backdrop.clientHeight,
-          scrollExtraVsVh: backdrop.scrollHeight - vh,
-        },
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {})
-    // #endregion
-
-    // #region agent log
-    fetch("http://127.0.0.1:7522/ingest/5a67757b-9c88-4743-9fdd-c513f0047a20", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "68037d" },
-      body: JSON.stringify({
-        sessionId: "68037d",
-        runId: "pre-fix",
-        hypothesisId: "H2",
-        location: "JobModal.tsx:layout",
-        message: "panel rect margins",
-        data: {
-          panelTop: rect.top,
-          panelBottom: rect.bottom,
-          marginAbovePanel: rect.top,
-          marginBelowVh: vh - rect.bottom,
-        },
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {})
-    // #endregion
-
-    // #region agent log
-    fetch("http://127.0.0.1:7522/ingest/5a67757b-9c88-4743-9fdd-c513f0047a20", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "68037d" },
-      body: JSON.stringify({
-        sessionId: "68037d",
-        runId: "pre-fix",
-        hypothesisId: "H3",
-        location: "JobModal.tsx:layout",
-        message: "panel height vs viewport",
-        data: {
-          panelScrollH: panel.scrollHeight,
-          exceedsVh: panel.scrollHeight > vh,
-          vh,
-        },
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {})
-    // #endregion
-
-    // #region agent log
-    fetch("http://127.0.0.1:7522/ingest/5a67757b-9c88-4743-9fdd-c513f0047a20", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "68037d" },
-      body: JSON.stringify({
-        sessionId: "68037d",
-        runId: "pre-fix",
-        hypothesisId: "H4",
-        location: "JobModal.tsx:layout",
-        message: "gallery vs text vertical share",
-        data: {
-          galleryH,
-          approxTextH: textBlockH,
-          galleryShare: panel.scrollHeight > 0 ? galleryH / panel.scrollHeight : 0,
-        },
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {})
-    // #endregion
-
-    // #region agent log
-    fetch("http://127.0.0.1:7522/ingest/5a67757b-9c88-4743-9fdd-c513f0047a20", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "X-Debug-Session-Id": "68037d" },
-      body: JSON.stringify({
-        sessionId: "68037d",
-        runId: "pre-fix",
-        hypothesisId: "H5",
-        location: "JobModal.tsx:layout",
-        message: "horizontal overflow",
-        data: { hOverflow, panelClientW: panel.clientWidth, panelScrollW: panel.scrollWidth },
-        timestamp: Date.now(),
-      }),
-    }).catch(() => {})
-    // #endregion
-  }, [])
-
   return (
     <div
-      ref={backdropRef}
-      className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4 overflow-y-auto"
+      className="fixed inset-0 z-50 flex justify-center overflow-y-auto bg-black/70 p-3 max-md:items-start max-md:pt-[max(0.75rem,env(safe-area-inset-top))] max-md:pb-[max(0.75rem,env(safe-area-inset-bottom))] md:items-center md:p-4"
       onClick={onClose}
       role="presentation"
     >
 
       <div
-        ref={panelRef}
-        className="card-surface max-w-3xl w-full p-6 md:p-8 relative my-8"
+        className="card-surface relative my-4 w-full min-w-0 max-w-3xl max-md:max-h-[calc(100dvh-1.75rem)] max-md:overflow-y-auto max-md:overscroll-contain p-4 md:my-8 md:max-h-none md:overflow-visible md:p-8"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
@@ -161,42 +40,41 @@ export default function JobModal({
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 text-stone-400 hover:text-white text-xl"
+          className="absolute right-3 top-3 text-xl text-stone-400 hover:text-white md:right-4 md:top-4"
           aria-label="Close"
         >
           ✕
         </button>
 
-        <h2 id="job-modal-title" className="text-2xl font-semibold text-white mb-2 pr-10">
+        <h2 id="job-modal-title" className="mb-1 pr-9 text-xl font-semibold text-white max-md:leading-snug md:mb-2 md:pr-10 md:text-2xl">
           {jobType} – {location}
         </h2>
 
         {context && (
-          <p className="text-stone-300 text-sm leading-relaxed mb-4 whitespace-pre-line">
+          <p className="mb-3 text-sm leading-relaxed text-stone-300 whitespace-pre-line md:mb-4">
             {context}
           </p>
         )}
 
         {description ? (
-          <p className="text-stone-400 text-sm leading-relaxed mb-6">
+          <p className="mb-4 text-sm leading-relaxed text-stone-400 max-md:mb-4 md:mb-6">
             {description}
           </p>
         ) : null}
 
         {details ? (
-          <p className="text-stone-400 text-sm leading-relaxed mb-6">
+          <p className="mb-4 text-sm leading-relaxed text-stone-400 max-md:mb-4 md:mb-6">
             {details}
           </p>
         ) : null}
 
         <div
-          ref={galleryRef}
-          className="mt-5 mx-auto grid max-w-[440px] grid-cols-2 gap-3"
+          className="mx-auto mt-3 grid max-w-[min(100%,240px)] grid-cols-2 gap-2 md:mt-5 md:max-w-[440px] md:gap-3"
         >
           {images.map((img) => (
             <div
               key={img.src}
-              className="overflow-hidden rounded-lg aspect-[4/5]"
+              className="aspect-[4/5] overflow-hidden rounded-lg"
             >
               <img
                 src={img.src}
