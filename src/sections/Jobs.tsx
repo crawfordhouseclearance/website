@@ -81,12 +81,12 @@ export default function Jobs() {
           Recent Clearance Jobs
         </h2>
 
-        <div className="flex flex-row gap-6 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-10 md:overflow-visible md:snap-none">
+        <div className="flex flex-row items-stretch gap-6 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-3 md:gap-10 md:overflow-visible md:snap-none">
 
           {jobs.map((job) => (
             <div
               key={`${job.jobType}-${job.location}`}
-              className="shrink-0 snap-center w-[88%] md:w-auto md:min-w-0"
+              className="shrink-0 snap-center w-[88%] h-full flex flex-col md:w-auto md:min-w-0"
             >
               <JobCard
                 location={job.location}

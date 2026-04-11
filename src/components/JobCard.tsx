@@ -32,7 +32,7 @@ export default function JobCard({
   return (
     <>
       <div
-        className="card-surface overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+        className="card-surface overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer h-full flex flex-col"
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -44,17 +44,17 @@ export default function JobCard({
         tabIndex={0}
       >
 
-        <div className="p-6 flex flex-col h-full gap-4">
+        <div className="p-6 flex flex-col flex-1 min-h-0 gap-4">
 
           {category && (
-            <div>
+            <div className="shrink-0">
               <span className="inline-flex items-center rounded-full px-3 py-1 text-xs tracking-widest uppercase text-text-muted border border-border-soft bg-white/5">
                 {category}
               </span>
             </div>
           )}
 
-          <div className="space-y-1">
+          <div className="space-y-1 shrink-0">
             <h3 className="text-lg font-semibold text-white">
               {jobType} – {location}
             </h3>
@@ -67,18 +67,20 @@ export default function JobCard({
           </div>
 
           {description && (
-            <p className="text-text-muted text-sm leading-relaxed">
+            <p className="text-text-muted text-sm leading-relaxed shrink-0">
               {description}
             </p>
           )}
 
-          <div className="grid grid-cols-2 gap-3">
-            <img src={previewBefore} alt="" className="rounded-lg w-full h-auto object-cover" />
-            <img src={previewAfter} alt="" className="rounded-lg w-full h-auto object-cover" />
+          <div className="flex-1 min-h-0" aria-hidden="true" />
+
+          <div className="grid grid-cols-2 gap-3 shrink-0">
+            <img src={previewBefore} alt="" className="rounded-lg w-full aspect-[4/3] object-cover" />
+            <img src={previewAfter} alt="" className="rounded-lg w-full aspect-[4/3] object-cover" />
           </div>
 
           <span
-            className="bg-cta text-brand-deep px-4 py-2 rounded-lg text-sm font-semibold self-start hover:bg-cta-hover transition pointer-events-none"
+            className="bg-cta text-brand-deep px-4 py-2 rounded-lg text-sm font-semibold self-start hover:bg-cta-hover transition pointer-events-none shrink-0"
           >
             View Details
           </span>
