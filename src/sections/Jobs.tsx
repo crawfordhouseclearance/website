@@ -86,7 +86,7 @@ export default function Jobs() {
           {jobs.map((job) => (
             <div
               key={`${job.jobType}-${job.location}`}
-              className="shrink-0 snap-center w-[88%] h-full flex flex-col md:w-auto md:min-w-0"
+              className="flex min-h-0 w-[88%] shrink-0 snap-center flex-col self-stretch md:w-auto md:min-w-0"
             >
               <JobCard
                 location={job.location}
