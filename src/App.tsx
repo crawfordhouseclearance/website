@@ -15,6 +15,8 @@ import Contact from "./sections/Contact"
 import Privacy from "./pages/Privacy"
 import EbayAuthAccepted from "./pages/EbayAuthAccepted"
 import EbayAuthDeclined from "./pages/EbayAuthDeclined"
+import AdContact from "./pages/AdContact"
+import AdContactThanks from "./pages/AdContactThanks"
 
 /** JSON-LD for `/` only (see Home); business details match site copy and public assets. */
 function LocalBusinessJsonLd() {
@@ -90,6 +92,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/ad-contact" element={<AdContact />} />
+        <Route path="/ad-contact/thanks" element={<AdContactThanks />} />
         <Route path="/ebay/auth/accepted" element={<EbayAuthAccepted />} />
         <Route path="/ebay/auth/declined" element={<EbayAuthDeclined />} />
       </Routes>
