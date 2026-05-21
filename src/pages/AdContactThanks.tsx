@@ -6,6 +6,16 @@ import { applyPageMeta } from "../seo/pageMeta"
 export default function AdContactThanks() {
   useEffect(() => {
     applyPageMeta("ad-contact-thanks")
+
+    // Google Ads conversion event for "Submit lead form (1)".
+    // Fires on mount because this route is reached only after a successful
+    // lead-form submission (see AdContact -> navigate('/ad-contact/thanks')).
+    const w = window as unknown as { gtag?: (...args: unknown[]) => void }
+    w.gtag?.("event", "conversion", {
+      send_to: "AW-18178004943/spWfCMm88rAcEM-v-dtD",
+      value: 1.0,
+      currency: "GBP",
+    })
   }, [])
 
   return (
