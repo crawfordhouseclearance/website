@@ -4,11 +4,14 @@ import { AppRoutes } from "./App"
 import { getPageMetaForPath } from "./seo/pageMeta"
 
 export const prerenderPaths = [
+  "/house-clearance",
   "/probate-house-clearance",
   "/house-clearance-falkirk",
   "/house-clearance-stirling",
   "/house-clearance-cumbernauld",
   "/commercial-clearance",
+  "/landlord-end-of-tenancy-clearance",
+  "/professionals",
 ] as const
 
 export function render(url: string) {

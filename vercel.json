@@ -3,6 +3,10 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/house-clearance",
+      "destination": "/house-clearance.html"
+    },
+    {
       "source": "/probate-house-clearance",
       "destination": "/probate-house-clearance.html"
     },
@@ -21,6 +25,14 @@
     {
       "source": "/commercial-clearance",
       "destination": "/commercial-clearance.html"
+    },
+    {
+      "source": "/landlord-end-of-tenancy-clearance",
+      "destination": "/landlord-end-of-tenancy-clearance.html"
+    },
+    {
+      "source": "/professionals",
+      "destination": "/professionals.html"
     },
     { "source": "/(.*)", "destination": "/index.html" }
   ]

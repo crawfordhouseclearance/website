@@ -11,6 +11,11 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://www.crawfordhouseclearance.co.uk/house-clearance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.crawfordhouseclearance.co.uk/probate-house-clearance</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -32,6 +37,16 @@
   </url>
   <url>
     <loc>https://www.crawfordhouseclearance.co.uk/commercial-clearance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crawfordhouseclearance.co.uk/landlord-end-of-tenancy-clearance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.crawfordhouseclearance.co.uk/professionals</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

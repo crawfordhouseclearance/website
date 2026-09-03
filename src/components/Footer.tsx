@@ -26,6 +26,12 @@ function Footer() {
           className="mb-10 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-text-muted"
         >
           <a
+            href="/house-clearance"
+            className="underline-offset-4 hover:text-white hover:underline"
+          >
+            House Clearance
+          </a>
+          <a
             href="/probate-house-clearance"
             className="underline-offset-4 hover:text-white hover:underline"
           >
@@ -54,6 +60,18 @@ function Footer() {
             className="underline-offset-4 hover:text-white hover:underline"
           >
             Commercial Clearance
+          </a>
+          <a
+            href="/landlord-end-of-tenancy-clearance"
+            className="underline-offset-4 hover:text-white hover:underline"
+          >
+            Landlord &amp; End-of-Tenancy
+          </a>
+          <a
+            href="/professionals"
+            className="underline-offset-4 hover:text-white hover:underline"
+          >
+            For Professionals
           </a>
         </nav>
 

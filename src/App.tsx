@@ -23,6 +23,9 @@ import FalkirkHouseClearance from "./pages/FalkirkHouseClearance"
 import StirlingHouseClearance from "./pages/StirlingHouseClearance"
 import CumbernauldHouseClearance from "./pages/CumbernauldHouseClearance"
 import CommercialClearance from "./pages/CommercialClearance"
+import HouseClearance from "./pages/HouseClearance"
+import LandlordEndOfTenancyClearance from "./pages/LandlordEndOfTenancyClearance"
+import Professionals from "./pages/Professionals"
 
 /** JSON-LD for `/` only (see Home); business details match site copy and public assets. */
 function LocalBusinessJsonLd() {
@@ -96,11 +99,17 @@ export function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/house-clearance" element={<HouseClearance />} />
       <Route path="/probate-house-clearance" element={<ProbateHouseClearance />} />
       <Route path="/house-clearance-falkirk" element={<FalkirkHouseClearance />} />
       <Route path="/house-clearance-stirling" element={<StirlingHouseClearance />} />
       <Route path="/house-clearance-cumbernauld" element={<CumbernauldHouseClearance />} />
       <Route path="/commercial-clearance" element={<CommercialClearance />} />
+      <Route
+        path="/landlord-end-of-tenancy-clearance"
+        element={<LandlordEndOfTenancyClearance />}
+      />
+      <Route path="/professionals" element={<Professionals />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/ad-contact" element={<AdContact />} />
       <Route path="/ad-contact/thanks" element={<AdContactThanks />} />

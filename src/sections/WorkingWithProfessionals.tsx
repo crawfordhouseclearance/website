@@ -25,6 +25,15 @@ export default function WorkingWithProfessionals() {
           <li>Respectful handling of probate estates, end-of-tenancy, and managed properties</li>
         </ul>
 
+        <div className="mt-10 text-center">
+          <a
+            href="/professionals"
+            className="inline-flex rounded-lg border border-border-soft px-5 py-3 text-sm font-medium text-stone-200 transition hover:border-stone-500 hover:text-white"
+          >
+            View information for professionals
+          </a>
+        </div>
+
       </div>
 
     </section>

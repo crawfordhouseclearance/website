@@ -25,12 +25,20 @@ export default function Domestic() {
             re-letting or whatever comes next.
           </p>
 
-          <a
-            href="/house-clearance-falkirk"
-            className="mt-7 inline-flex rounded-lg border border-border-soft px-5 py-3 text-sm font-medium text-stone-200 transition hover:border-stone-500 hover:text-white"
-          >
-            House clearance in Falkirk
-          </a>
+          <div className="mt-7 flex flex-wrap gap-4">
+            <a
+              href="/house-clearance"
+              className="inline-flex rounded-lg border border-border-soft px-5 py-3 text-sm font-medium text-stone-200 transition hover:border-stone-500 hover:text-white"
+            >
+              View house clearance details
+            </a>
+            <a
+              href="/landlord-end-of-tenancy-clearance"
+              className="inline-flex items-center text-sm text-stone-300 underline underline-offset-4 hover:text-white"
+            >
+              Landlord and end-of-tenancy clearance
+            </a>
+          </div>
 
         </div>
 

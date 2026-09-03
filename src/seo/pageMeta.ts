@@ -31,6 +31,13 @@ const probateHouseClearance: PageMeta = {
   path: "/probate-house-clearance",
 }
 
+const houseClearance: PageMeta = {
+  title: "House Clearance Across Central Scotland | Crawford",
+  description:
+    "Full and partial house clearance across Central Scotland, with retained belongings, access, scope and pricing agreed before work begins.",
+  path: "/house-clearance",
+}
+
 const falkirkHouseClearance: PageMeta = {
   title: "House Clearance Falkirk | Crawford House Clearance",
   description:
@@ -59,6 +66,20 @@ const commercialClearance: PageMeta = {
   path: "/commercial-clearance",
 }
 
+const landlordEndOfTenancyClearance: PageMeta = {
+  title: "Landlord & End-of-Tenancy Clearance | Crawford",
+  description:
+    "Clearance of unwanted furniture and contents for landlords, letting agents and tenants across Central Scotland, with access and scope agreed upfront.",
+  path: "/landlord-end-of-tenancy-clearance",
+}
+
+const professionals: PageMeta = {
+  title: "Property Clearance for Professionals | Crawford",
+  description:
+    "Practical property clearance for solicitors, executors, estate agents, landlords and letting agents across Central Scotland.",
+  path: "/professionals",
+}
+
 const adContact: PageMeta = {
   title: "Get a Quote | Crawford House Clearance",
   description:
@@ -85,11 +106,14 @@ const notFound: PageMeta = {
 
 export type PublicPageMetaKey =
   | "home"
+  | "house-clearance"
   | "probate-house-clearance"
   | "house-clearance-falkirk"
   | "house-clearance-stirling"
   | "house-clearance-cumbernauld"
   | "commercial-clearance"
+  | "landlord-end-of-tenancy-clearance"
+  | "professionals"
   | "privacy"
   | "ad-contact"
   | "ad-contact-thanks"
@@ -97,11 +121,14 @@ export type PublicPageMetaKey =
 
 const byKey: Record<PublicPageMetaKey, PageMeta> = {
   home,
+  "house-clearance": houseClearance,
   "probate-house-clearance": probateHouseClearance,
   "house-clearance-falkirk": falkirkHouseClearance,
   "house-clearance-stirling": stirlingHouseClearance,
   "house-clearance-cumbernauld": cumbernauldHouseClearance,
   "commercial-clearance": commercialClearance,
+  "landlord-end-of-tenancy-clearance": landlordEndOfTenancyClearance,
+  professionals,
   privacy,
   "ad-contact": adContact,
   "ad-contact-thanks": adContactThanks,
