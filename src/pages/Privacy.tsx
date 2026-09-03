@@ -15,7 +15,7 @@ export default function Privacy() {
       <main>
         <section className="py-24">
           <div className="max-w-4xl mx-auto px-6 text-left">
-            <p className="text-xs text-text-muted mb-8">Last updated: 9 April 2026</p>
+            <p className="text-xs text-text-muted mb-8">Last updated: 3 September 2026</p>
 
             <h1 className="text-3xl font-semibold text-white mb-10">Privacy Policy</h1>
 
@@ -38,7 +38,7 @@ export default function Privacy() {
                 <li>
                   <span className="text-text-main">Contact details</span> — such as your
                   name, phone number, and email address when you call, email, message us on
-                  WhatsApp, or use the email link on our contact section.
+                  WhatsApp, or use our contact/quote form.
                 </li>
                 <li>
                   <span className="text-text-main">Enquiry details</span> — for example the
@@ -58,8 +58,11 @@ export default function Privacy() {
                 </li>
               </ul>
               <p className="mt-3">
-                The &quot;Get a Quote&quot; area uses your email app to send us a message; we
-                do not run a separate account system or online payment on this website.
+                Information entered into the &quot;Get a Quote&quot; contact form is submitted
+                through this website. We use it to deal with and respond to your enquiry.
+                The enquiry details are delivered to Crawford House Clearance by email, and
+                an automated acknowledgement is sent to the email address you provide. We do
+                not run a separate account system or online payment on this website.
               </p>
             </section>
 
