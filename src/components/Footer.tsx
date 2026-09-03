@@ -21,6 +21,15 @@ function Footer() {
           Scotland.
         </p>
 
+        <nav aria-label="Footer services" className="mb-10 text-sm text-text-muted">
+          <a
+            href="/probate-house-clearance"
+            className="underline-offset-4 hover:text-white hover:underline"
+          >
+            Probate House Clearance
+          </a>
+        </nav>
+
 
         {/* Footer Grid */}
 

@@ -17,6 +17,8 @@ import EbayAuthAccepted from "./pages/EbayAuthAccepted"
 import EbayAuthDeclined from "./pages/EbayAuthDeclined"
 import AdContact from "./pages/AdContact"
 import AdContactThanks from "./pages/AdContactThanks"
+import ProbateHouseClearance from "./pages/ProbateHouseClearance"
+import NotFound from "./pages/NotFound"
 
 /** JSON-LD for `/` only (see Home); business details match site copy and public assets. */
 function LocalBusinessJsonLd() {
@@ -86,17 +88,25 @@ function Home() {
   )
 }
 
+export function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/probate-house-clearance" element={<ProbateHouseClearance />} />
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/ad-contact" element={<AdContact />} />
+      <Route path="/ad-contact/thanks" element={<AdContactThanks />} />
+      <Route path="/ebay/auth/accepted" element={<EbayAuthAccepted />} />
+      <Route path="/ebay/auth/declined" element={<EbayAuthDeclined />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/ad-contact" element={<AdContact />} />
-        <Route path="/ad-contact/thanks" element={<AdContactThanks />} />
-        <Route path="/ebay/auth/accepted" element={<EbayAuthAccepted />} />
-        <Route path="/ebay/auth/declined" element={<EbayAuthDeclined />} />
-      </Routes>
+      <AppRoutes />
     </BrowserRouter>
   )
 }

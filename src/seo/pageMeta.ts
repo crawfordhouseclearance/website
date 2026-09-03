@@ -1,6 +1,6 @@
 const SITE_ORIGIN = "https://www.crawfordhouseclearance.co.uk"
 
-type PageMeta = {
+export type PageMeta = {
   title: string
   description: string
   path: string
@@ -24,6 +24,13 @@ const privacy: PageMeta = {
   path: "/privacy",
 }
 
+const probateHouseClearance: PageMeta = {
+  title: "Probate House Clearance in Falkirk & Stirling | Crawford",
+  description:
+    "Respectful probate and bereavement house clearance for families, executors and professionals across Falkirk, Stirling and Central Scotland.",
+  path: "/probate-house-clearance",
+}
+
 const adContact: PageMeta = {
   title: "Get a Quote | Crawford House Clearance",
   description:
@@ -40,17 +47,42 @@ const adContactThanks: PageMeta = {
   robots: "noindex, follow",
 }
 
+const notFound: PageMeta = {
+  title: "Page Not Found | Crawford House Clearance",
+  description:
+    "The requested page could not be found. Return to Crawford House Clearance for services and contact details.",
+  path: "/404",
+  robots: "noindex, follow",
+}
+
 export type PublicPageMetaKey =
   | "home"
+  | "probate-house-clearance"
   | "privacy"
   | "ad-contact"
   | "ad-contact-thanks"
+  | "not-found"
 
 const byKey: Record<PublicPageMetaKey, PageMeta> = {
   home,
+  "probate-house-clearance": probateHouseClearance,
   privacy,
   "ad-contact": adContact,
   "ad-contact-thanks": adContactThanks,
+  "not-found": notFound,
+}
+
+export type ResolvedPageMeta = PageMeta & { url: string }
+
+export function getPageMeta(key: PublicPageMetaKey): ResolvedPageMeta {
+  const page = byKey[key]
+  return { ...page, url: `${SITE_ORIGIN}${page.path}` }
+}
+
+export function getPageMetaForPath(path: string): ResolvedPageMeta | undefined {
+  const pathname = path === "/" ? path : path.replace(/\/$/, "")
+  const page = Object.values(byKey).find((candidate) => candidate.path === pathname)
+  return page ? { ...page, url: `${SITE_ORIGIN}${page.path}` } : undefined
 }
 
 /**
@@ -58,8 +90,8 @@ const byKey: Record<PublicPageMetaKey, PageMeta> = {
  * call with `home` on the home route so returning from `/privacy` restores tags.
  */
 export function applyPageMeta(key: PublicPageMetaKey) {
-  const p = byKey[key]
-  const url = `${SITE_ORIGIN}${p.path}`
+  const p = getPageMeta(key)
+  const url = p.url
 
   document.title = p.title
 

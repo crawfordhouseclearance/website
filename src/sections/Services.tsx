@@ -16,7 +16,7 @@ export default function Services() {
         <div className="grid md:grid-cols-3 gap-10">
 
           <a
-            href="#probate"
+            href="/probate-house-clearance"
             className="card-surface p-8 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl block"
           >
             <h3 className="text-lg font-semibold text-white mb-4">
@@ -27,6 +27,10 @@ export default function Services() {
               Probate clearances handled with care, working with families,
               solicitors and estate agents where needed.
             </p>
+
+            <span className="mt-5 inline-block text-sm font-medium text-stone-200">
+              View probate clearance details →
+            </span>
 
           </a>
 

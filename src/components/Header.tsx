@@ -2,13 +2,13 @@ export default function Header() {
   return (
     <header className="site-surface sticky top-0 z-50">
 
-      <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex items-center justify-between">
 
         {/* Logo + Title */}
 
         <a
           href="/"
-          className="flex items-center gap-4"
+          className="flex min-w-0 items-center gap-2 sm:gap-4"
           onClick={(e) => {
             if (window.location.pathname === "/") {
               e.preventDefault()
@@ -20,24 +20,24 @@ export default function Header() {
           <img
             src="/images/logo-white.svg"
             alt="Crawford House Clearance logo"
-            className="h-12 w-auto relative top-[1px] opacity-90 hover:opacity-100 transition"
+            className="h-10 w-auto shrink-0 relative top-[1px] opacity-90 hover:opacity-100 transition sm:h-12"
           />
 
-          <div className="text-sm md:text-base font-semibold tracking-widest text-text-main">
+          <div className="whitespace-nowrap text-[10px] font-semibold tracking-[0.12em] text-text-main sm:text-sm sm:tracking-widest md:text-base">
             CRAWFORD HOUSE CLEARANCE
           </div>
 
         </a>
 
 
-        <div className="flex items-center gap-5 md:gap-6">
+        <div className="ml-3 flex shrink-0 items-center gap-5 md:gap-6">
 
           {/* Navigation */}
 
           <nav className="hidden md:flex gap-8 text-sm text-text-muted">
 
             <a
-              href="/#probate"
+              href="/probate-house-clearance"
               className="hover:text-white transition-colors"
             >
               Probate

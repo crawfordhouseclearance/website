@@ -24,6 +24,13 @@ export default function Probate() {
             of what left the property.
           </p>
 
+          <a
+            href="/probate-house-clearance"
+            className="mt-7 inline-flex rounded-lg border border-border-soft px-5 py-3 text-sm font-medium text-stone-200 transition hover:border-stone-500 hover:text-white"
+          >
+            More about probate house clearance
+          </a>
+
         </div>
 
 
