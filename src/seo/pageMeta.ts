@@ -31,6 +31,13 @@ const probateHouseClearance: PageMeta = {
   path: "/probate-house-clearance",
 }
 
+const falkirkHouseClearance: PageMeta = {
+  title: "House Clearance Falkirk | Crawford House Clearance",
+  description:
+    "Full and partial house clearance in Falkirk for homes, landlords and managed properties, with agreed pricing and licensed waste removal.",
+  path: "/house-clearance-falkirk",
+}
+
 const adContact: PageMeta = {
   title: "Get a Quote | Crawford House Clearance",
   description:
@@ -58,6 +65,7 @@ const notFound: PageMeta = {
 export type PublicPageMetaKey =
   | "home"
   | "probate-house-clearance"
+  | "house-clearance-falkirk"
   | "privacy"
   | "ad-contact"
   | "ad-contact-thanks"
@@ -66,6 +74,7 @@ export type PublicPageMetaKey =
 const byKey: Record<PublicPageMetaKey, PageMeta> = {
   home,
   "probate-house-clearance": probateHouseClearance,
+  "house-clearance-falkirk": falkirkHouseClearance,
   privacy,
   "ad-contact": adContact,
   "ad-contact-thanks": adContactThanks,

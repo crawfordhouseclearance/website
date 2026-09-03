@@ -6,6 +6,10 @@
       "source": "/probate-house-clearance",
       "destination": "/probate-house-clearance.html"
     },
+    {
+      "source": "/house-clearance-falkirk",
+      "destination": "/house-clearance-falkirk.html"
+    },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

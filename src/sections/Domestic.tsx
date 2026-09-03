@@ -25,6 +25,13 @@ export default function Domestic() {
             corners or bags left behind.
           </p>
 
+          <a
+            href="/house-clearance-falkirk"
+            className="mt-7 inline-flex rounded-lg border border-border-soft px-5 py-3 text-sm font-medium text-stone-200 transition hover:border-stone-500 hover:text-white"
+          >
+            House clearance in Falkirk
+          </a>
+
         </div>
 
 

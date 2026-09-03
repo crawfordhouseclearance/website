@@ -3,7 +3,10 @@ import { StaticRouter } from "react-router-dom"
 import { AppRoutes } from "./App"
 import { getPageMetaForPath } from "./seo/pageMeta"
 
-export const prerenderPaths = ["/probate-house-clearance"] as const
+export const prerenderPaths = [
+  "/probate-house-clearance",
+  "/house-clearance-falkirk",
+] as const
 
 export function render(url: string) {
   const meta = getPageMetaForPath(url)
