@@ -21,7 +21,7 @@ export default function WorkingWithProfessionals() {
           <li>Clear communication on timelines, contacts, and what happens at each stage</li>
           <li>Scope and pricing confirmed before work starts</li>
           <li>Coordination of access, keys, and property handover to your instructions</li>
-          <li>Waste removed through licensed routes, with transfer documentation where applicable</li>
+          <li>Waste taken to licensed waste facilities, with transfer documentation where applicable</li>
           <li>Respectful handling of probate estates, end-of-tenancy, and managed properties</li>
         </ul>
 

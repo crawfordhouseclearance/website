@@ -53,7 +53,7 @@ function CumbernauldServiceJsonLd() {
 
 const clearanceServices = [
   {
-    title: "Full and partial clearances",
+    title: "Full and partial house clearances",
     text: "Clearance can cover a whole home, selected rooms, a garage, loft or other storage space. We agree the areas and contents to be removed before the work is booked.",
   },
   {
@@ -62,7 +62,7 @@ const clearanceServices = [
   },
   {
     title: "Landlord and end-of-tenancy clearance",
-    text: "When a property needs prepared for its next tenant, inspection or onward work, the clearance is planned around the agreed date, access and removal scope.",
+    text: "When a property needs to be prepared for its next tenant, inspection or onward work, the clearance is planned around the agreed date, access and removal scope.",
   },
   {
     title: "Commercial and managed property clearance",
@@ -72,7 +72,7 @@ const clearanceServices = [
 
 const faqs = [
   {
-    question: "What information do you need for a Cumbernauld clearance quote?",
+    question: "What information do you need to quote for a house clearance in Cumbernauld?",
     answer:
       "Send the property postcode, photographs where possible, the areas involved and anything that must remain. We will use that information to confirm the most suitable way to assess the work before agreeing a price.",
   },
@@ -84,7 +84,7 @@ const faqs = [
   {
     question: "How are reusable items and waste handled?",
     answer:
-      "Where appropriate, usable items can be separated for reuse. Removed waste is taken through licensed routes. Crawford House Clearance is a SEPA-registered waste carrier, registration WCR/R/3023449, with transfer documentation available where applicable.",
+      "Where appropriate, usable items can be separated for reuse. Waste is disposed of through licensed waste facilities. Crawford House Clearance is a SEPA-registered waste carrier, registration WCR/R/3023449, with transfer documentation available where applicable.",
   },
   {
     question: "Do you cover properties near Cumbernauld as well?",
@@ -103,10 +103,10 @@ export default function CumbernauldHouseClearance() {
       <CumbernauldServiceJsonLd />
 
       <ServicePageLayout
-        breadcrumbLabel="House Clearance Cumbernauld"
+        breadcrumbLabel="House Clearance in Cumbernauld"
         eyebrow="Practical property clearance in Cumbernauld"
         title="House Clearance in Cumbernauld"
-        introduction="Full and partial clearances for homes, estates, landlords and managed properties. We agree what is being removed, what must stay, access and the price before work begins."
+        introduction="Full and partial house clearances for homes, estates, landlords and managed properties. We agree what will be removed, what must stay, access and the price before work begins."
         imageSrc="/images/web/case_domestic_bedroom_before_full.webp"
         imageAlt="Bedroom before a domestic property clearance"
       >
@@ -114,7 +114,7 @@ export default function CumbernauldHouseClearance() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-stone-300">
-                Cumbernauld property clearance
+                House clearance services
               </p>
               <h2 className="text-3xl font-semibold text-white">
                 Clear Instructions From the First Enquiry
@@ -123,7 +123,7 @@ export default function CumbernauldHouseClearance() {
                 Whether the work is prompted by a move, probate, a tenancy change
                 or an overfilled property, a clear plan helps everyone. We start
                 with the property details, the items that must remain and the
-                access available, then agree a practical scope for the clearance.
+                access available, then agree exactly what the clearance will cover.
               </p>
             </div>
 
@@ -145,12 +145,12 @@ export default function CumbernauldHouseClearance() {
                 A simple process
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                From Photos and Postcode to an Agreed Job
+                A Simple Clearance Process
               </h2>
               <ol className="mt-8 space-y-6 text-text-muted">
-                <li><span className="font-semibold text-white">1. Tell us about the property.</span> Send the location, photos and a brief outline of what needs cleared.</li>
+                <li><span className="font-semibold text-white">1. Tell us about the property.</span> Send the location, photos and a brief outline of what needs to be cleared.</li>
                 <li><span className="font-semibold text-white">2. Set the instructions.</span> We agree the included areas, retained items, access, timing and price.</li>
-                <li><span className="font-semibold text-white">3. Complete the agreed clearance.</span> Contents are removed through licensed routes and the agreed areas are swept through.</li>
+                <li><span className="font-semibold text-white">3. Complete the agreed clearance.</span> Contents are taken to licensed waste facilities and the agreed areas are swept.</li>
               </ol>
             </div>
 
@@ -179,12 +179,12 @@ export default function CumbernauldHouseClearance() {
               Licensed waste handling
             </p>
             <h2 className="text-center text-3xl font-semibold text-white">
-              Responsible Disposal Built Into the Plan
+              Responsible Waste Disposal
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-center leading-relaxed text-text-muted">
-              We plan the removal around the property and its contents, separating
-              usable items where appropriate and using licensed routes for waste.
-              The agreed scope makes it clear what will be removed and what will be left in place.
+              Where appropriate, usable items are separated for reuse. Waste is
+              disposed of through licensed waste facilities, and we agree in advance
+              what will be removed and what will be left in place.
             </p>
           </div>
         </section>
@@ -199,7 +199,7 @@ export default function CumbernauldHouseClearance() {
               </p>
             </div>
 
-            <h2 className="text-center text-3xl font-semibold text-white">Cumbernauld House Clearance FAQs</h2>
+            <h2 className="text-center text-3xl font-semibold text-white">House Clearance in Cumbernauld: FAQs</h2>
             <div className="mt-10 space-y-4">
               {faqs.map((faq) => (
                 <details key={faq.question} className="card-surface group p-6">

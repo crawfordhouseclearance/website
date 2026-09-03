@@ -54,7 +54,7 @@ function StirlingServiceJsonLd() {
 const clearanceTypes = [
   {
     title: "Whole-home clearance",
-    text: "Furniture, white goods and general contents removed from the agreed areas, with the property swept through for its next stage.",
+    text: "Furniture, white goods and general contents removed from the agreed areas, which are then swept and left ready for the property's next stage.",
   },
   {
     title: "Probate and estate clearance",
@@ -72,7 +72,7 @@ const clearanceTypes = [
 
 const faqs = [
   {
-    question: "Can you clear a Stirling property if I live elsewhere?",
+    question: "Can you clear a property in Stirling if I live elsewhere?",
     answer:
       "Yes, provided access and authority to give instructions are clear. We can coordinate keys, retained items and handover with the authorised family member, executor, solicitor or estate agent.",
   },
@@ -89,7 +89,7 @@ const faqs = [
   {
     question: "Are you registered to carry waste from the property?",
     answer:
-      "Yes. Crawford House Clearance is a SEPA-registered waste carrier, registration WCR/R/3023449. Removed waste goes through licensed routes, with transfer documentation available where applicable.",
+      "Yes. Crawford House Clearance is a SEPA-registered waste carrier, registration WCR/R/3023449. Waste is disposed of through licensed waste facilities, with transfer documentation available where applicable.",
   },
 ] as const
 
@@ -103,7 +103,7 @@ export default function StirlingHouseClearance() {
       <StirlingServiceJsonLd />
 
       <ServicePageLayout
-        breadcrumbLabel="House Clearance Stirling"
+        breadcrumbLabel="House Clearance in Stirling"
         eyebrow="Property clearance across Stirling"
         title="House Clearance in Stirling"
         introduction="Practical full and partial clearances for homes, estates and managed properties. We agree access, what must remain, the removal scope and the price before work begins."
@@ -114,10 +114,10 @@ export default function StirlingHouseClearance() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-stone-300">
-                Stirling property clearance
+                House clearance services
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                A Defined Job, Not an Open-Ended Removal
+                A Clear Scope Agreed in Advance
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
                 Every property has different instructions. We start by
@@ -155,7 +155,7 @@ export default function StirlingHouseClearance() {
                 <p className="mt-5 leading-relaxed text-text-muted">
                   This house was cleared room by room around the probate
                   process. Usable items were separated where appropriate,
-                  general waste was removed through licensed routes and the
+                  general waste was taken to licensed waste facilities and the
                   property was left ready for handover.
                 </p>
                 <a
@@ -200,7 +200,7 @@ export default function StirlingHouseClearance() {
                 Preparing the Property for What Comes Next
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
-                A Stirling clearance may need to line up with a viewing,
+                A house clearance in Stirling may need to line up with a viewing,
                 tenancy, sale or professional handover. We confirm the contact,
                 access and finish required in advance, rather than leaving
                 those decisions until the clearance is underway.
@@ -240,7 +240,7 @@ export default function StirlingHouseClearance() {
             </div>
 
             <h2 className="text-center text-3xl font-semibold text-white">
-              Stirling House Clearance FAQs
+              House Clearance in Stirling: FAQs
             </h2>
             <div className="mt-10 space-y-4">
               {faqs.map((faq) => (

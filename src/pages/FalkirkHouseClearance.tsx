@@ -72,14 +72,14 @@ const services = [
 
 const faqs = [
   {
-    question: "Do you provide both full and partial clearances in Falkirk?",
+    question: "Do you carry out full and partial house clearances in Falkirk?",
     answer:
       "Yes. The agreed work can cover a whole property, selected rooms or individual areas such as a loft, garage or shed. The scope is confirmed before work begins.",
   },
   {
     question: "Can I send photos for an initial quote?",
     answer:
-      "Yes. Send photographs by WhatsApp along with the Falkirk property location and a short description of what needs removed. We will let you know if an in-person visit is needed before confirming the work.",
+      "Yes. Send photographs by WhatsApp along with the property address or postcode in Falkirk and a short description of what needs to be removed. We will let you know if an in-person visit is needed before confirming the work.",
   },
   {
     question: "What if some belongings need to remain?",
@@ -87,9 +87,9 @@ const faqs = [
       "Identify those items clearly before the clearance. We work to the agreed instructions so retained belongings and fixtures are not included in the removal scope.",
   },
   {
-    question: "How is the waste from a Falkirk clearance handled?",
+    question: "What happens to the waste from a house clearance in Falkirk?",
     answer:
-      "Waste is removed through licensed routes. Crawford House Clearance is a SEPA-registered waste carrier, registration WCR/R/3023449, with transfer documentation available where applicable.",
+      "Waste is removed and disposed of through licensed waste facilities. Crawford House Clearance is a SEPA-registered waste carrier, registration WCR/R/3023449, with transfer documentation available where applicable.",
   },
 ] as const
 
@@ -103,10 +103,10 @@ export default function FalkirkHouseClearance() {
       <FalkirkServiceJsonLd />
 
       <ServicePageLayout
-        breadcrumbLabel="House Clearance Falkirk"
+        breadcrumbLabel="House Clearance in Falkirk"
         eyebrow="Local clearance across the Falkirk area"
         title="House Clearance in Falkirk"
-        introduction="Full and partial property clearances with the scope and price agreed before work begins. We clear homes, storage areas and managed properties across Falkirk and nearby parts of Central Scotland."
+        introduction="Full and partial house clearances with the work and price agreed before we begin. We clear homes, storage areas and managed properties in Falkirk and nearby parts of Central Scotland."
         imageSrc="/images/web/case_domestic_kitchen_before_full.webp"
         imageAlt="Kitchen before a domestic house clearance in Falkirk"
       >
@@ -123,7 +123,7 @@ export default function FalkirkHouseClearance() {
                 A clearance may be needed before a move, sale, new tenancy or
                 building work—or simply to make an overfilled room usable
                 again. We establish what must remain and what should be removed
-                before giving the job a clear scope.
+                before agreeing the work and price.
               </p>
             </div>
 
@@ -153,9 +153,9 @@ export default function FalkirkHouseClearance() {
                   Partial Domestic Clearance
                 </h2>
                 <p className="mt-5 leading-relaxed text-text-muted">
-                  This Falkirk job focused on the main lived-in areas of the
+                  This job in Falkirk focused on the main lived-in areas of the
                   property. Kitchen and bedroom contents were removed through
-                  licensed routes and the rooms were left ready for the
+                  licensed waste facilities and the rooms were left ready for the
                   owner&apos;s next step, whether further cleaning, re-letting or
                   onward work.
                 </p>
@@ -206,7 +206,7 @@ export default function FalkirkHouseClearance() {
                   </li>
                   <li>
                     <span className="font-semibold text-white">3. Complete the clearance.</span>{" "}
-                    Contents are removed through licensed routes and the agreed areas are swept through.
+                    Contents are taken to licensed waste facilities and the agreed areas are swept.
                   </li>
                 </ol>
               </div>
@@ -242,7 +242,7 @@ export default function FalkirkHouseClearance() {
               Practical questions
             </p>
             <h2 className="text-center text-3xl font-semibold text-white">
-              Falkirk House Clearance FAQs
+              House Clearance in Falkirk: FAQs
             </h2>
 
             <div className="mt-10 space-y-4">

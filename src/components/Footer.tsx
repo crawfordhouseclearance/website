@@ -35,19 +35,19 @@ function Footer() {
             href="/house-clearance-falkirk"
             className="underline-offset-4 hover:text-white hover:underline"
           >
-            House Clearance Falkirk
+            House Clearance in Falkirk
           </a>
           <a
             href="/house-clearance-stirling"
             className="underline-offset-4 hover:text-white hover:underline"
           >
-            House Clearance Stirling
+            House Clearance in Stirling
           </a>
           <a
             href="/house-clearance-cumbernauld"
             className="underline-offset-4 hover:text-white hover:underline"
           >
-            House Clearance Cumbernauld
+            House Clearance in Cumbernauld
           </a>
           <a
             href="/commercial-clearance"

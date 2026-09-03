@@ -20,9 +20,9 @@ export default function Domestic() {
           </p>
 
           <p className="text-stone-400 leading-relaxed">
-            You get a fixed scope and price before we start, and the place swept
-            through so it is ready for sale, rent, or your next step—not half-done
-            corners or bags left behind.
+            We agree the work and price before we start. Once the clearance is
+            complete, we sweep the agreed areas so the property is ready for sale,
+            re-letting or whatever comes next.
           </p>
 
           <a

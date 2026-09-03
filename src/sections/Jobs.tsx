@@ -21,7 +21,7 @@ export default function Jobs() {
         "Full house clearance completed in Stirling.\nUsable items separated for donation and recycling.\nProperty cleared and left ready for handover.",
       description: "",
       details:
-        "Access and handover were coordinated around the probate process, with the clearance carried out room by room to keep the property manageable throughout. Usable items were separated where appropriate, general waste was removed through licensed routes, and the house was left cleared and ready for the next stage.",
+        "Access and handover were coordinated around the probate process, with the clearance carried out room by room. Usable items were separated where appropriate, general waste was taken to licensed waste facilities, and the house was left clear and ready for the next stage.",
       previews: [
         "/images/web/case_probate_room_before.webp",
         "/images/web/case_probate_room_after.webp",
@@ -57,7 +57,7 @@ export default function Jobs() {
         "Partial domestic clearance completed in Falkirk.\nKitchen and bedroom areas cleared.\nProperty left ready for the next tenant or next step.",
       description: "",
       details:
-        "This clearance focused on the main lived-in areas of the property, with selected rooms cleared, loose contents removed, and the space left in a more usable condition. Waste was taken away through the normal licensed route, and the property was left ready for the owner's next step, whether that meant further cleaning, re-letting, or onward works.",
+        "This clearance covered the main lived-in areas of the property. Selected rooms were cleared, loose contents were removed, and waste was taken to licensed waste facilities. The property was left ready for further cleaning, re-letting or other work.",
       previews: [
         "/images/web/case_domestic_kitchen_before.webp",
         "/images/web/case_domestic_kitchen_after.webp",
@@ -90,10 +90,10 @@ export default function Jobs() {
       jobType: "Garage Clearance",
       category: "Commercial",
       context:
-        "Garage and outbuilding clearance completed in Larbert.\nGeneral waste removed through licensed routes.\nSpace left clear and usable again.",
+        "Garage and outbuilding clearance completed in Larbert.\nGeneral waste taken to licensed waste facilities.\nSpace left clear and usable again.",
       description: "",
       details:
-        "This job involved clearing out the garage and associated storage space, removing mixed household contents and general waste that had built up over time. Bulky items and loose debris were taken away through licensed routes, and the space was left clear, accessible, and usable again.",
+        "This job involved clearing the garage and its storage space of mixed household contents and general waste that had built up over time. Bulky items and loose debris were taken to licensed waste facilities, leaving the space clear, accessible and usable again.",
       previews: [
         "/images/web/case_garage_02_before.webp",
         "/images/web/case_garage_02_after.webp",

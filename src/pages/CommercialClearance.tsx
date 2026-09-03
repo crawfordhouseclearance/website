@@ -66,7 +66,7 @@ const clearanceTypes = [
   },
   {
     title: "Refit and strip-out preparation",
-    text: "Removable fittings, furniture and general waste cleared so access routes and floors are ready for the next contractor or stage of work.",
+    text: "Removable fittings, furniture and general waste cleared so access routes and floors are ready for the next contractor or the next stage of work.",
   },
 ] as const
 
@@ -89,7 +89,7 @@ const faqs = [
   {
     question: "What disposal paperwork is available?",
     answer:
-      "Crawford House Clearance is a SEPA-registered waste carrier, registration WCR/R/3023449. Waste goes through licensed routes and transfer documentation is available where applicable.",
+      "Crawford House Clearance is a SEPA-registered waste carrier, registration WCR/R/3023449. Waste is disposed of through licensed waste facilities, and transfer documentation is available where applicable.",
   },
 ] as const
 
@@ -117,13 +117,13 @@ export default function CommercialClearance() {
                 Commercial clearance services
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                A Practical Scope for the Premises
+                Clear Work Agreed for the Premises
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
                 Commercial spaces often have fixed access times, several types
                 of contents and another contractor or tenant waiting for the
-                property. We define what is being removed and how the cleared
-                areas should be left before the work is booked.
+                property. Before the work is booked, we agree what will be
+                removed and how the cleared areas should be left.
               </p>
             </div>
 
@@ -153,9 +153,9 @@ export default function CommercialClearance() {
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
                 If part of the premises remains in use, we can plan around the
-                agreed working hours and access arrangements. The instruction
-                should identify any furniture, stock or fittings that remain,
-                as well as the rooms and routes included in the clearance.
+                agreed working hours and access arrangements. We also agree
+                which furniture, stock or fittings must remain, along with the
+                rooms and access routes included in the clearance.
               </p>
               <p className="mt-5 leading-relaxed text-text-muted">
                 At completion, the agreed floors and access routes are left
@@ -234,13 +234,13 @@ export default function CommercialClearance() {
                   href="/house-clearance-falkirk"
                   className="text-stone-200 underline underline-offset-4 hover:text-white"
                 >
-                  Clearance in Falkirk
+                  House clearance in Falkirk
                 </a>
                 <a
                   href="/house-clearance-stirling"
                   className="text-stone-200 underline underline-offset-4 hover:text-white"
                 >
-                  Clearance in Stirling
+                  House clearance in Stirling
                 </a>
               </div>
             </div>

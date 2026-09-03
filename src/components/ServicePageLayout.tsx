@@ -97,7 +97,7 @@ export default function ServicePageLayout({
                 Tell Us About the Property
               </h2>
               <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-text-muted">
-                Send the property location, the areas that need cleared and any
+                Send the property location, the areas that need to be cleared and any
                 timing or access details. Photographs can be sent separately by
                 WhatsApp if that is easier.
               </p>

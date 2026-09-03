@@ -41,9 +41,9 @@ export default function Commercial() {
           </p>
 
           <p className="text-stone-400 leading-relaxed">
-            Everything goes through licensed routes with SEPA-compliant paperwork.
-            When we are finished, floors and access routes are left clear for the next
-            contractor or handover—not blocked with debris.
+            Waste is removed and disposed of through licensed waste facilities, with
+            transfer paperwork provided where applicable. When we are finished, floors
+            and access routes are left clear for the next contractor or handover.
           </p>
 
           <a

@@ -13,15 +13,15 @@ export default function Probate() {
           </h2>
 
           <p className="text-stone-400 leading-relaxed mb-6">
-            Probate clearances need steady coordination: access, what stays versus what
-            goes, and your timings. We work with you directly or via your solicitor, and
-            we fit around viewings and handovers.
+            Probate clearances often need careful coordination around access, what needs
+            to remain, and any deadlines or handover dates. We can work with you directly
+            or through your solicitor and fit around viewings and handovers.
           </p>
 
           <p className="text-stone-400 leading-relaxed">
-            Where it helps, we separate usable goods for donation or resale; the rest is
-            cleared and disposed of legally, with waste transfer notes and a clear record
-            of what left the property.
+            Where appropriate, we separate usable goods for donation or resale. Waste is
+            removed and disposed of through licensed waste facilities, with transfer
+            paperwork provided where applicable.
           </p>
 
           <a

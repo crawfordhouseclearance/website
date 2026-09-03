@@ -93,7 +93,7 @@ const faqs = [
   {
     question: "How is removed waste handled?",
     answer:
-      "Waste is removed through licensed routes. Crawford House Clearance is a SEPA-registered waste carrier, registration WCR/R/3023449, and waste-transfer documentation is available where applicable.",
+      "Waste is removed and disposed of through licensed waste facilities. Crawford House Clearance is a SEPA-registered waste carrier, registration WCR/R/3023449, and waste-transfer documentation is available where applicable.",
   },
 ] as const
 
@@ -125,9 +125,8 @@ export default function ProbateHouseClearance() {
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
                 Bereavement clearances can involve several people, important
-                belongings and fixed property deadlines. The first job is to
-                make the instructions unambiguous, then carry them through
-                carefully.
+                belongings and fixed property deadlines. We first make sure
+                the instructions are clear, then follow them carefully.
               </p>
             </div>
 
@@ -168,8 +167,8 @@ export default function ProbateHouseClearance() {
                 In Scotland, the legal process is called confirmation—the
                 Scottish equivalent of probate. Crawford House Clearance does
                 not provide legal advice, but we can fit the practical
-                clearance around the instructions and timings set by the
-                estate&apos;s authorised representatives.
+                clearance around the instructions, deadlines and handover
+                dates set by the estate&apos;s authorised representatives.
               </p>
               <a
                 href="https://www.scotcourts.gov.uk/taking-action/dealing-with-a-deceaseds-estate-in-scotland/guide-to-dealing-with-a-deceaseds-estate-in-scotland"
@@ -191,7 +190,7 @@ export default function ProbateHouseClearance() {
                 <li>Lofts, garages, sheds and outbuildings</li>
                 <li>Separation of clearly identified items to retain</li>
                 <li>Usable items set aside for donation or resale where appropriate</li>
-                <li>A final sweep-through ready for sale, viewing or handover</li>
+                <li>The agreed areas swept and left ready for sale, viewing or handover</li>
               </ul>
             </div>
           </div>
@@ -210,8 +209,8 @@ export default function ProbateHouseClearance() {
                 <p className="mt-5 leading-relaxed text-text-muted">
                   A full house clearance was completed room by room around the
                   probate process. Usable items were separated where
-                  appropriate, general waste was removed through licensed
-                  routes and the property was left ready for handover.
+                  appropriate, general waste was taken to licensed waste
+                  facilities and the property was left ready for handover.
                 </p>
                 <a
                   href="/house-clearance-stirling"
