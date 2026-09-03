@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"
 import { applyPageMeta } from "./seo/pageMeta"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
@@ -26,6 +26,14 @@ import CommercialClearance from "./pages/CommercialClearance"
 import HouseClearance from "./pages/HouseClearance"
 import LandlordEndOfTenancyClearance from "./pages/LandlordEndOfTenancyClearance"
 import Professionals from "./pages/Professionals"
+
+const homepageSectionIds = new Set([
+  "probate",
+  "domestic",
+  "commercial",
+  "jobs",
+  "contact",
+])
 
 /** JSON-LD for `/` only (see Home); business details match site copy and public assets. */
 function LocalBusinessJsonLd() {
@@ -61,9 +69,27 @@ function LocalBusinessJsonLd() {
 }
 
 function Home() {
+  const { hash } = useLocation()
+
   useEffect(() => {
     applyPageMeta("home")
   }, [])
+
+  useEffect(() => {
+    const sectionId = hash.slice(1)
+
+    if (!homepageSectionIds.has(sectionId)) return
+
+    const target = document.getElementById(sectionId)
+
+    if (!target) return
+
+    const frame = window.requestAnimationFrame(() => {
+      target.scrollIntoView()
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [hash])
 
   return (
     <>

@@ -37,7 +37,7 @@ export default function Header() {
           <nav className="hidden md:flex gap-8 text-sm text-text-muted">
 
             <a
-              href="/probate-house-clearance"
+              href="/#probate"
               className="hover:text-white transition-colors"
             >
               Probate
@@ -51,7 +51,7 @@ export default function Header() {
             </a>
 
             <a
-              href="/commercial-clearance"
+              href="/#commercial"
               className="hover:text-white transition-colors"
             >
               Commercial
