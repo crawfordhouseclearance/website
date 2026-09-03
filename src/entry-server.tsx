@@ -7,6 +7,7 @@ export const prerenderPaths = [
   "/probate-house-clearance",
   "/house-clearance-falkirk",
   "/house-clearance-stirling",
+  "/house-clearance-cumbernauld",
   "/commercial-clearance",
 ] as const
 

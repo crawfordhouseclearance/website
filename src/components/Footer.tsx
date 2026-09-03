@@ -44,6 +44,12 @@ function Footer() {
             House Clearance Stirling
           </a>
           <a
+            href="/house-clearance-cumbernauld"
+            className="underline-offset-4 hover:text-white hover:underline"
+          >
+            House Clearance Cumbernauld
+          </a>
+          <a
             href="/commercial-clearance"
             className="underline-offset-4 hover:text-white hover:underline"
           >
