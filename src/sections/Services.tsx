@@ -50,7 +50,7 @@ export default function Services() {
           </a>
 
           <a
-            href="#commercial"
+            href="/commercial-clearance"
             className="card-surface p-8 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl block"
           >
             <h3 className="text-lg font-semibold text-white mb-4">
@@ -61,6 +61,10 @@ export default function Services() {
               Offices, retail and industrial premises cleared, with waste
               disposed of in line with SEPA requirements.
             </p>
+
+            <span className="mt-5 inline-block text-sm font-medium text-stone-200">
+              View commercial clearance details →
+            </span>
 
           </a>
 

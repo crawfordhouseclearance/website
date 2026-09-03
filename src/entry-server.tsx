@@ -7,6 +7,7 @@ export const prerenderPaths = [
   "/probate-house-clearance",
   "/house-clearance-falkirk",
   "/house-clearance-stirling",
+  "/commercial-clearance",
 ] as const
 
 export function render(url: string) {

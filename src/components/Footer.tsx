@@ -43,6 +43,12 @@ function Footer() {
           >
             House Clearance Stirling
           </a>
+          <a
+            href="/commercial-clearance"
+            className="underline-offset-4 hover:text-white hover:underline"
+          >
+            Commercial Clearance
+          </a>
         </nav>
 
 

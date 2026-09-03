@@ -14,6 +14,10 @@
       "source": "/house-clearance-stirling",
       "destination": "/house-clearance-stirling.html"
     },
+    {
+      "source": "/commercial-clearance",
+      "destination": "/commercial-clearance.html"
+    },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

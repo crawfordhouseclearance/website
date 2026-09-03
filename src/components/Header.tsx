@@ -51,7 +51,7 @@ export default function Header() {
             </a>
 
             <a
-              href="/#commercial"
+              href="/commercial-clearance"
               className="hover:text-white transition-colors"
             >
               Commercial

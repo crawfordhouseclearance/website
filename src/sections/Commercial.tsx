@@ -46,6 +46,13 @@ export default function Commercial() {
             contractor or handover—not blocked with debris.
           </p>
 
+          <a
+            href="/commercial-clearance"
+            className="mt-7 inline-flex rounded-lg border border-border-soft px-5 py-3 text-sm font-medium text-stone-200 transition hover:border-stone-500 hover:text-white"
+          >
+            More about commercial clearance
+          </a>
+
         </div>
 
       </div>
