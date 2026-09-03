@@ -37,6 +37,12 @@ function Footer() {
           >
             House Clearance Falkirk
           </a>
+          <a
+            href="/house-clearance-stirling"
+            className="underline-offset-4 hover:text-white hover:underline"
+          >
+            House Clearance Stirling
+          </a>
         </nav>
 
 

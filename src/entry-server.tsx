@@ -6,6 +6,7 @@ import { getPageMetaForPath } from "./seo/pageMeta"
 export const prerenderPaths = [
   "/probate-house-clearance",
   "/house-clearance-falkirk",
+  "/house-clearance-stirling",
 ] as const
 
 export function render(url: string) {

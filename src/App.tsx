@@ -20,6 +20,7 @@ import AdContactThanks from "./pages/AdContactThanks"
 import ProbateHouseClearance from "./pages/ProbateHouseClearance"
 import NotFound from "./pages/NotFound"
 import FalkirkHouseClearance from "./pages/FalkirkHouseClearance"
+import StirlingHouseClearance from "./pages/StirlingHouseClearance"
 
 /** JSON-LD for `/` only (see Home); business details match site copy and public assets. */
 function LocalBusinessJsonLd() {
@@ -95,6 +96,7 @@ export function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/probate-house-clearance" element={<ProbateHouseClearance />} />
       <Route path="/house-clearance-falkirk" element={<FalkirkHouseClearance />} />
+      <Route path="/house-clearance-stirling" element={<StirlingHouseClearance />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/ad-contact" element={<AdContact />} />
       <Route path="/ad-contact/thanks" element={<AdContactThanks />} />

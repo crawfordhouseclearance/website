@@ -10,6 +10,10 @@
       "source": "/house-clearance-falkirk",
       "destination": "/house-clearance-falkirk.html"
     },
+    {
+      "source": "/house-clearance-stirling",
+      "destination": "/house-clearance-stirling.html"
+    },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

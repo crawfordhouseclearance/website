@@ -213,6 +213,12 @@ export default function ProbateHouseClearance() {
                   appropriate, general waste was removed through licensed
                   routes and the property was left ready for handover.
                 </p>
+                <a
+                  href="/house-clearance-stirling"
+                  className="mt-6 inline-block text-sm text-stone-200 underline underline-offset-4 hover:text-white"
+                >
+                  See our house clearance service in Stirling
+                </a>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
