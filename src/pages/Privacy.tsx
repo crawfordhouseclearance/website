@@ -155,10 +155,11 @@ export default function Privacy() {
                 Cookies and website data
               </h2>
               <p>
-                This website does not use analytics or advertising cookies that we control.
-                Like any site, loading pages may involve standard technical processing by your
-                browser and our hosting. If we introduce optional cookies or similar tools
-                in future, we will update this notice.
+                This website uses Google Ads measurement technology to measure whether
+                advertising leads to enquiries or conversions. Google Ads measurement
+                technology may use cookies or similar technologies depending on your
+                browser, device and settings. This involves third-party technology provided
+                by Google.
               </p>
             </section>
 
