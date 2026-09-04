@@ -3,6 +3,10 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
       "source": "/house-clearance",
       "destination": "/house-clearance.html"
     },
@@ -34,6 +38,21 @@
       "source": "/professionals",
       "destination": "/professionals.html"
     },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/ad-contact",
+      "destination": "/ad-contact.html"
+    },
+    {
+      "source": "/ad-contact/thanks",
+      "destination": "/ad-contact/thanks.html"
+    },
+    {
+      "source": "/ebay/auth/accepted",
+      "destination": "/ebay/auth/accepted.html"
+    },
+    {
+      "source": "/ebay/auth/declined",
+      "destination": "/ebay/auth/declined.html"
+    }
   ]
 }

@@ -4,14 +4,21 @@ import { AppContent } from "./App"
 import { getPageMetaForPath } from "./seo/pageMeta"
 
 export const prerenderPaths = [
+  "/",
+  "/privacy",
   "/house-clearance",
   "/probate-house-clearance",
-  "/house-clearance-falkirk",
-  "/house-clearance-stirling",
-  "/house-clearance-cumbernauld",
   "/commercial-clearance",
   "/landlord-end-of-tenancy-clearance",
   "/professionals",
+  "/house-clearance-falkirk",
+  "/house-clearance-stirling",
+  "/house-clearance-cumbernauld",
+  "/ad-contact",
+  "/ad-contact/thanks",
+  "/ebay/auth/accepted",
+  "/ebay/auth/declined",
+  "/404",
 ] as const
 
 export function render(url: string) {

@@ -1,3 +1,5 @@
+/                            /index.html                             200
+/privacy                     /privacy.html                           200
 /house-clearance            /house-clearance.html           200
 /probate-house-clearance    /probate-house-clearance.html   200
 /house-clearance-falkirk    /house-clearance-falkirk.html   200
@@ -6,4 +8,7 @@
 /commercial-clearance       /commercial-clearance.html      200
 /landlord-end-of-tenancy-clearance /landlord-end-of-tenancy-clearance.html 200
 /professionals              /professionals.html             200
-/*                           /index.html                     200
+/ad-contact                  /ad-contact.html                200
+/ad-contact/thanks           /ad-contact/thanks.html         200
+/ebay/auth/accepted          /ebay/auth/accepted.html        200
+/ebay/auth/declined          /ebay/auth/declined.html        200

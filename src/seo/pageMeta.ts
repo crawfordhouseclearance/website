@@ -4,6 +4,8 @@ export type PageMeta = {
   title: string
   description: string
   path: string
+  /** Defaults to a self-referencing canonical URL. */
+  canonical?: boolean
   /** Defaults to "index, follow" (matches index.html). */
   robots?: string
 }
@@ -96,11 +98,28 @@ const adContactThanks: PageMeta = {
   robots: "noindex, follow",
 }
 
+const ebayAuthAccepted: PageMeta = {
+  title: "eBay Authorisation Complete | Crawford House Clearance",
+  description:
+    "eBay authorisation completed successfully. Return to the application to continue.",
+  path: "/ebay/auth/accepted",
+  robots: "noindex, follow",
+}
+
+const ebayAuthDeclined: PageMeta = {
+  title: "eBay Authorisation Declined | Crawford House Clearance",
+  description:
+    "eBay authorisation was declined. Close this page and try again if needed.",
+  path: "/ebay/auth/declined",
+  robots: "noindex, follow",
+}
+
 const notFound: PageMeta = {
   title: "Page Not Found | Crawford House Clearance",
   description:
     "The requested page could not be found. Return to Crawford House Clearance for services and contact details.",
   path: "/404",
+  canonical: false,
   robots: "noindex, follow",
 }
 
@@ -117,6 +136,8 @@ export type PublicPageMetaKey =
   | "privacy"
   | "ad-contact"
   | "ad-contact-thanks"
+  | "ebay-auth-accepted"
+  | "ebay-auth-declined"
   | "not-found"
 
 const byKey: Record<PublicPageMetaKey, PageMeta> = {
@@ -132,20 +153,30 @@ const byKey: Record<PublicPageMetaKey, PageMeta> = {
   privacy,
   "ad-contact": adContact,
   "ad-contact-thanks": adContactThanks,
+  "ebay-auth-accepted": ebayAuthAccepted,
+  "ebay-auth-declined": ebayAuthDeclined,
   "not-found": notFound,
 }
 
-export type ResolvedPageMeta = PageMeta & { url: string }
+export type ResolvedPageMeta = PageMeta & { url: string; canonicalUrl?: string }
+
+function resolvePageMeta(page: PageMeta): ResolvedPageMeta {
+  const url = `${SITE_ORIGIN}${page.path}`
+  return {
+    ...page,
+    url,
+    canonicalUrl: page.canonical === false ? undefined : url,
+  }
+}
 
 export function getPageMeta(key: PublicPageMetaKey): ResolvedPageMeta {
-  const page = byKey[key]
-  return { ...page, url: `${SITE_ORIGIN}${page.path}` }
+  return resolvePageMeta(byKey[key])
 }
 
 export function getPageMetaForPath(path: string): ResolvedPageMeta | undefined {
   const pathname = path === "/" ? path : path.replace(/\/$/, "")
   const page = Object.values(byKey).find((candidate) => candidate.path === pathname)
-  return page ? { ...page, url: `${SITE_ORIGIN}${page.path}` } : undefined
+  return page ? resolvePageMeta(page) : undefined
 }
 
 /**
@@ -162,7 +193,21 @@ export function applyPageMeta(key: PublicPageMetaKey) {
     .querySelector('meta[name="description"]')
     ?.setAttribute("content", p.description)
 
-  document.querySelector('link[rel="canonical"]')?.setAttribute("href", url)
+  const existingCanonical = document.querySelector<HTMLLinkElement>(
+    'link[rel="canonical"]',
+  )
+
+  if (p.canonicalUrl) {
+    const canonical = existingCanonical ?? document.createElement("link")
+    canonical.setAttribute("rel", "canonical")
+    canonical.setAttribute("href", p.canonicalUrl)
+
+    if (!existingCanonical) {
+      document.head.append(canonical)
+    }
+  } else {
+    existingCanonical?.remove()
+  }
 
   document
     .querySelector('meta[name="robots"]')

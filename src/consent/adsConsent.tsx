@@ -155,7 +155,15 @@ type AdsConsentContextValue = {
 const AdsConsentContext = createContext<AdsConsentContextValue | null>(null)
 
 export function AdsConsentProvider({ children }: { children: ReactNode }) {
-  const [consent, setConsent] = useState<AdsConsentState>(getStoredConsent)
+  const [consent, setConsent] = useState<AdsConsentState>("undecided")
+
+  useEffect(() => {
+    const storedConsent = getStoredConsent()
+    if (storedConsent === "undecided") return
+
+    const timeout = window.setTimeout(() => setConsent(storedConsent), 0)
+    return () => window.clearTimeout(timeout)
+  }, [])
 
   useEffect(() => {
     if (consent === "accepted") void ensureAdsMeasurement()

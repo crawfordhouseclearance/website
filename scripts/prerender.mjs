@@ -41,9 +41,15 @@ function applyHead(document, meta) {
   output = replaceMetaContent(output, "name", "twitter:title", meta.title)
   output = replaceMetaContent(output, "name", "twitter:description", meta.description)
 
+  const canonicalPattern = /<link\s+rel=["']canonical["'][^>]*>/i
+
+  if (!meta.canonicalUrl) {
+    return output.replace(canonicalPattern, "")
+  }
+
   return output.replace(
-    /<link\s+rel=["']canonical["'][^>]*>/i,
-    `<link rel="canonical" href="${escapeAttribute(meta.url)}" />`,
+    canonicalPattern,
+    `<link rel="canonical" href="${escapeAttribute(meta.canonicalUrl)}" />`,
   )
 }
 
@@ -55,7 +61,12 @@ for (const route of prerenderPaths) {
     `<div id="root" data-prerendered-path="${escapeAttribute(route)}">${result.html}</div>`,
   )
 
-  const outputPath = path.join(distDir, `${route.slice(1)}.html`)
+  const outputPath =
+    route === "/"
+      ? path.join(distDir, "index.html")
+      : route === "/404"
+        ? path.join(distDir, "404.html")
+        : path.join(distDir, `${route.slice(1)}.html`)
   await mkdir(path.dirname(outputPath), { recursive: true })
   await writeFile(outputPath, document, "utf8")
 }
