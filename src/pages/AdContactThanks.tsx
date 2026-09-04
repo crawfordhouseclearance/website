@@ -23,7 +23,7 @@ export default function AdContactThanks() {
       if (!loaded || !hasAcceptedAdsConsent()) return
 
       window.gtag?.("event", "conversion", {
-        send_to: "AW-18178004943/spWfCMm88rAcEM-v-dtD",
+        send_to: "AW-18178004943/6xNrCOKLyu4cEM-v-dtD",
         value: 1.0,
         currency: "GBP",
       })
