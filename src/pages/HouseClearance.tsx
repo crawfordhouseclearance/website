@@ -53,13 +53,13 @@ function HouseClearanceJsonLd() {
 const processSteps = [
   {
     number: "01",
-    title: "Show us what needs cleared",
-    text: "Tell us the property location, the rooms or areas involved and what needs to remain. Photographs can help us understand the work initially.",
+    title: "Show us what needs to be cleared",
+    text: "Tell us where the property is, which rooms or areas are involved and what needs to stay. Photographs can help us assess the work initially.",
   },
   {
     number: "02",
     title: "Agree access and timing",
-    text: "We confirm practical details such as keys, parking, stairs and any date the property needs to be ready for its next stage.",
+    text: "We confirm practical details such as keys, parking, stairs and when the property needs to be ready.",
   },
   {
     number: "03",
@@ -68,8 +68,8 @@ const processSteps = [
   },
   {
     number: "04",
-    title: "Clear the agreed areas",
-    text: "We complete the agreed clearance, separate usable items where appropriate and sweep the cleared areas before handover.",
+    title: "Complete the agreed work",
+    text: "We remove the agreed items, separate usable goods where appropriate and sweep the areas before handover.",
   },
 ] as const
 
@@ -77,7 +77,7 @@ const faqs = [
   {
     question: "Can you clear only part of a house?",
     answer:
-      "Yes. We undertake full and partial clearances, including individual rooms, lofts, garages and sheds. The areas included are confirmed as part of the quote.",
+      "Yes. We carry out full and partial house clearances, including individual rooms, lofts, garages and sheds. We confirm the areas included as part of the quote.",
   },
   {
     question: "How do I make sure certain belongings stay?",
@@ -109,7 +109,7 @@ export default function HouseClearance() {
         breadcrumbLabel="House Clearance"
         eyebrow="Domestic clearance across Central Scotland"
         title="Full and Partial House Clearance"
-        introduction="Practical clearance for whole homes or selected rooms. We agree what goes, what stays, access and the price before work begins."
+        introduction="A practical domestic clearance service, whether you need a full house clearance or help with selected rooms. Before work begins, we agree what goes, what stays, access and the price."
         imageSrc="/images/web/service_domestic_1.webp"
         imageAlt="Kitchen and household contents before a house clearance"
       >
@@ -120,19 +120,18 @@ export default function HouseClearance() {
                 A straightforward service
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                Clear Only What You Need Cleared
+                Full or Partial House Clearances
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
-                A house clearance may cover an entire property or only the
-                rooms and contents you no longer need. We can remove furniture,
+                A house clearance can cover the whole property or just the
+                rooms and items you no longer need. We can remove furniture,
                 white goods and general household contents from the agreed
-                areas, including lofts, garages and sheds where included.
+                areas, including lofts, garages and sheds.
               </p>
               <p className="mt-5 leading-relaxed text-text-muted">
-                Homeowners, families, landlords and tenants can all arrange a
-                clearance. The important part is agreeing who can give
-                instructions and making retained belongings clear before work
-                starts.
+                We work with homeowners, families, landlords and tenants. Before
+                starting, we confirm who is giving the instructions and clearly
+                identify any belongings that must stay.
               </p>
             </div>
 
@@ -161,7 +160,7 @@ export default function HouseClearance() {
                 Before work begins
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                Belongings, Access and the Next Step
+                Belongings, Access and What Happens Next
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
                 Tell us about items that must remain, restricted areas and any
@@ -170,10 +169,10 @@ export default function HouseClearance() {
                 property appointment.
               </p>
               <p className="mt-5 leading-relaxed text-text-muted">
-                Once complete, the agreed areas are swept and left ready for
-                whatever comes next. If the property is being prepared between
-                tenancies, our dedicated landlord and end-of-tenancy page
-                explains that process in more detail.
+                Once the work is complete, the agreed areas are swept and left
+                ready for whatever comes next. If the property is being prepared
+                between tenancies, our dedicated landlord and end-of-tenancy
+                page explains that process in more detail.
               </p>
               <a
                 href="/landlord-end-of-tenancy-clearance"
@@ -206,13 +205,13 @@ export default function HouseClearance() {
                 Responsible removal
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                Reuse Where Appropriate, Licensed Disposal for Waste
+                Reuse Where Appropriate and Licensed Waste Disposal
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
                 Usable goods can be separated for donation or resale where
                 appropriate. Remaining waste is taken to licensed waste
-                facilities by a SEPA-registered waste carrier. This gives you a
-                clear route for the contents leaving the property.
+                facilities by a SEPA-registered waste carrier, so the contents
+                leaving the property follow an appropriate waste route.
               </p>
             </div>
 

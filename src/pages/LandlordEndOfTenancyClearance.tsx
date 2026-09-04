@@ -54,19 +54,19 @@ function LandlordClearanceJsonLd() {
 const clearanceNeeds = [
   {
     title: "Remaining furniture and contents",
-    text: "Unwanted furniture, white goods and general contents removed from the rooms included in the agreed scope.",
+    text: "We remove unwanted furniture, white goods and general contents from the rooms included in the agreed scope.",
   },
   {
-    title: "Between-tenancy clearance",
-    text: "Items left behind can be cleared so the agreed areas are ready for cleaning, repairs, inspection or re-letting.",
+    title: "End-of-tenancy clearance",
+    text: "We remove items left behind so the agreed areas are ready for cleaning, repairs, inspection or re-letting.",
   },
   {
     title: "Managed access",
-    text: "Keys, property access and handover can be coordinated with the authorised landlord, letting agent, tenant or property contact.",
+    text: "We coordinate keys, property access and handover with the authorised landlord, letting agent, tenant or property contact.",
   },
   {
     title: "Retained items",
-    text: "Fixtures, appliances, furnishings or personal belongings that must remain are identified before clearance work begins.",
+    text: "Before work begins, we identify any fixtures, appliances, furnishings or personal belongings that must stay.",
   },
 ] as const
 
@@ -74,7 +74,7 @@ const faqs = [
   {
     question: "Can you collect keys from a landlord or letting agent?",
     answer:
-      "Access and key arrangements can be agreed with the authorised property contact before the job. We also confirm how keys should be returned and who will receive the handover.",
+      "Access and key arrangements can be agreed with the authorised property contact before the job. We also confirm how the keys should be returned and who the property will be handed back to.",
   },
   {
     question: "Can you remove items left by a former tenant?",
@@ -84,7 +84,7 @@ const faqs = [
   {
     question: "Can clearance be arranged around repairs or cleaning?",
     answer:
-      "Yes, where the sequence and timing are agreed before booking. Tell us when other work is planned and the condition in which the cleared areas need to be handed over.",
+      "Yes, as long as the order and timing are agreed before booking. Tell us when other work is planned and how the agreed areas need to be left for handover.",
   },
   {
     question: "Is waste documentation available?",
@@ -106,7 +106,7 @@ export default function LandlordEndOfTenancyClearance() {
         breadcrumbLabel="Landlord and End-of-Tenancy Clearance"
         eyebrow="Landlords, letting agents and tenants"
         title="Landlord and End-of-Tenancy Clearance"
-        introduction="Clearance of unwanted furniture and contents between tenancies, with the removal scope, access and handover agreed before work starts."
+        introduction="Our landlord clearance service removes unwanted furniture and remaining contents between tenancies, with the scope, access and handover agreed before work starts."
         imageSrc="/images/web/service_domestic_03.webp"
         imageAlt="Bedroom contents before an end-of-tenancy clearance"
       >
@@ -117,13 +117,13 @@ export default function LandlordEndOfTenancyClearance() {
                 Between tenancies
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                Prepare the Property for Its Next Stage
+                Get the Property Ready for What Comes Next
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
-                When unwanted items remain after a tenancy, the clearance needs
-                to fit around access, cleaning, repairs and the next handover.
-                We agree the rooms and contents to be cleared, what must remain
-                and the relevant dates before confirming the work.
+                When unwanted items remain after a tenancy, the work may need to
+                fit around access, cleaning, repairs and the next handover. We
+                agree which rooms and contents are included, what must stay and
+                the relevant dates before confirming the job.
               </p>
             </div>
 
@@ -146,22 +146,22 @@ export default function LandlordEndOfTenancyClearance() {
           <div className="max-w-6xl mx-auto px-6 grid gap-12 md:grid-cols-2 md:items-start">
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-stone-300">
-                Clear instructions
+                Before the job
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                Access, Authority and Handover
+                Agreeing Access, Instructions and Handover
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
                 The landlord, letting agent, tenant or other property contact
-                arranging the clearance must be authorised to instruct us. We
+                arranging the work must be authorised to instruct us. We
                 agree who will provide access, which items are to be removed and
                 how the property and keys should be handed back.
               </p>
               <p className="mt-5 leading-relaxed text-text-muted">
                 If fixtures, appliances or furnishings are staying for the next
-                tenancy, identify them clearly before work begins. The agreed
-                areas are swept after clearance, ready for the cleaning, repair
-                or inspection work that follows.
+                tenancy, identify them clearly before work begins. Once the job
+                is complete, the agreed areas are swept, ready for the cleaning,
+                repair or inspection work that follows.
               </p>
             </div>
 
@@ -175,7 +175,7 @@ export default function LandlordEndOfTenancyClearance() {
                 <li>A list of fixtures, appliances or belongings that must stay</li>
                 <li>Parking, stairs and other access considerations</li>
                 <li>Key collection and return arrangements</li>
-                <li>The date needed for cleaning, repairs or handover</li>
+                <li>Dates for cleaning, repairs or handover</li>
               </ul>
             </aside>
           </div>
@@ -188,7 +188,7 @@ export default function LandlordEndOfTenancyClearance() {
                 Licensed waste handling
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                A Documented Route for Removed Waste
+                Waste Handling and Documentation
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
                 Crawford House Clearance is a SEPA-registered waste carrier.

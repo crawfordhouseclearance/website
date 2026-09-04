@@ -53,19 +53,19 @@ function ProfessionalsServiceJsonLd() {
 const professionalNeeds = [
   {
     title: "Solicitors and executors",
-    text: "Respectful probate clearance carried out to instructions agreed with the authorised estate contact, including belongings that must remain.",
+    text: "We carry out probate clearance with care, following the instructions agreed with the authorised estate contact and identifying belongings that must stay.",
   },
   {
     title: "Estate agents",
-    text: "Access, keys and the required condition at handover agreed around property marketing, sale preparation or completion dates.",
+    text: "We agree access, key arrangements and the required condition at handover around property marketing, sale preparation or completion dates.",
   },
   {
     title: "Landlords and letting agents",
-    text: "Unwanted contents cleared between tenancies so cleaning, repairs, inspection or re-letting can follow in the planned order.",
+    text: "We remove unwanted contents between tenancies so cleaning, repairs, inspection or re-letting can follow in the planned order.",
   },
   {
     title: "Other property professionals",
-    text: "A defined clearance scope for properties that need to be prepared before valuation, sale, tenancy or onward work.",
+    text: "We agree a defined scope for properties being prepared for valuation, sale, tenancy or other work.",
   },
 ] as const
 
@@ -77,26 +77,26 @@ const processSteps = [
   },
   {
     number: "02",
-    title: "Define the clearance scope",
-    text: "Rooms, contents, retained belongings and exclusions are recorded clearly before the work is booked.",
+    title: "Agree what is included",
+    text: "We record the rooms, contents, retained belongings and exclusions before the work is booked.",
   },
   {
     number: "03",
     title: "Coordinate access and dates",
-    text: "Key arrangements, property access and relevant sale, tenancy or onward-work dates are agreed in advance.",
+    text: "We agree key arrangements, property access and any dates relating to the sale, tenancy or other work in advance.",
   },
   {
     number: "04",
-    title: "Complete and hand back",
-    text: "The agreed areas are cleared and swept, keys are returned as arranged and waste documentation is available where applicable.",
+    title: "Finish the work and hand back",
+    text: "We remove the agreed contents and sweep the areas, return keys as arranged and provide waste documentation where applicable.",
   },
 ] as const
 
 const faqs = [
   {
-    question: "Can you work from instructions provided by a solicitor or executor?",
+    question: "Can you take instructions from a solicitor or executor?",
     answer:
-      "Yes. We can coordinate with the authorised representative and agree the removal scope, retained belongings, access and handover before work begins.",
+      "Yes. We can coordinate with the authorised representative and agree what will be removed, what must stay, access and handover before work begins.",
   },
   {
     question: "Can you arrange access without the client attending?",
@@ -104,9 +104,9 @@ const faqs = [
       "Where authorised access is available, key collection and return can be agreed with the nominated contact. We confirm the arrangements and who can approve any decisions in advance.",
   },
   {
-    question: "How are items that must remain protected from removal?",
+    question: "How do you make sure retained items are not removed?",
     answer:
-      "They should be identified clearly when the scope is agreed. We work to the confirmed instructions and ask that any change is made through the nominated contact.",
+      "We identify them clearly when agreeing the scope and then work to the confirmed instructions. Any changes should come through the nominated contact.",
   },
   {
     question: "What waste information can you provide?",
@@ -128,7 +128,7 @@ export default function Professionals() {
         breadcrumbLabel="Professionals"
         eyebrow="Property clearance across Central Scotland"
         title="Property Clearance for Professionals"
-        introduction="A clear, practical process for solicitors, executors, estate agents, landlords, letting agents and other property contacts."
+        introduction="Property clearance and access coordination for solicitors, executors, estate agents, landlords, letting agents and other property professionals."
         imageSrc="/images/web/service_probate_03.webp"
         imageAlt="Property interior being assessed for a professional clearance"
       >
@@ -139,13 +139,13 @@ export default function Professionals() {
                 Practical coordination
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                Clear Instructions from Quote to Handover
+                An Agreed Brief from Quote to Handover
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
-                Professional property work often involves several people and a
-                fixed next step. We establish who is authorised to instruct us,
-                what is being removed, what must remain and how access and
-                handover should work before the clearance begins.
+                Property work often involves several people and a planned next
+                step. Before starting, we establish who is authorised to instruct
+                us, what is being removed, what must stay and how access and
+                handover will work.
               </p>
             </div>
 
@@ -168,10 +168,10 @@ export default function Professionals() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-stone-300">
-                One agreed process
+                An agreed point of contact
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                Scope, Access, Communication and Handover
+                How We Coordinate the Work
               </h2>
             </div>
 
@@ -197,17 +197,17 @@ export default function Professionals() {
           <div className="max-w-6xl mx-auto px-6 grid gap-12 md:grid-cols-2 md:items-start">
             <div>
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-stone-300">
-                Probate and managed property work
+                Different property needs
               </p>
               <h2 className="text-3xl font-semibold text-white">
-                The Right Service for the Property
+                Probate and End-of-Tenancy Work
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
-                Probate work is handled carefully around the estate&apos;s
-                instructions and retained belongings. Landlord and
-                end-of-tenancy work focuses on preparing agreed areas for
-                cleaning, repairs, inspection or re-letting. Each has its own
-                detailed service page.
+                For probate clearance, we work carefully to the estate&apos;s
+                instructions and identify any belongings that must stay.
+                Landlord and end-of-tenancy work focuses on preparing agreed
+                areas for cleaning, repairs, inspection or re-letting. Each
+                service has its own detailed page.
               </p>
               <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-sm">
                 <a
@@ -227,7 +227,7 @@ export default function Professionals() {
 
             <aside className="card-surface p-8">
               <h3 className="text-xl font-semibold text-white">
-                Details That Help Us Quote Clearly
+                Information We Need for a Quote
               </h3>
               <ul className="mt-6 space-y-3 text-text-muted">
                 <li>Property address and the authorised contact</li>
