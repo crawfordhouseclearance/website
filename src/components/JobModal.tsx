@@ -1,3 +1,5 @@
+import { useEffect, useRef, type RefObject } from "react"
+
 export type JobModalImage = {
   src: string
   alt: string
@@ -11,6 +13,7 @@ type JobModalProps = {
   details?: string
   images: readonly JobModalImage[]
   onClose: () => void
+  returnFocusRef: RefObject<HTMLElement | null>
 }
 
 export default function JobModal({
@@ -21,7 +24,75 @@ export default function JobModal({
   details,
   images,
   onClose,
+  returnFocusRef,
 }: JobModalProps) {
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    const dialog = dialogRef.current
+    const closeButton = closeButtonRef.current
+    const previousBodyOverflow = document.body.style.overflow
+    const focusTarget = returnFocusRef.current
+
+    document.body.style.overflow = "hidden"
+    closeButton?.focus()
+
+    const keepFocusInDialog = (event: FocusEvent) => {
+      if (!dialog || dialog.contains(event.target as Node)) return
+
+      closeButton?.focus()
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault()
+        event.stopPropagation()
+        onClose()
+        return
+      }
+
+      if (event.key !== "Tab" || !dialog) return
+
+      const focusableElements = Array.from(
+        dialog.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      )
+
+      if (focusableElements.length === 0) {
+        event.preventDefault()
+        dialog.focus()
+        return
+      }
+
+      const firstFocusable = focusableElements[0]
+      const lastFocusable = focusableElements[focusableElements.length - 1]
+      const activeElement = document.activeElement
+
+      if (event.shiftKey && (activeElement === firstFocusable || !dialog.contains(activeElement))) {
+        event.preventDefault()
+        lastFocusable.focus()
+      } else if (!event.shiftKey && (activeElement === lastFocusable || !dialog.contains(activeElement))) {
+        event.preventDefault()
+        firstFocusable.focus()
+      }
+    }
+
+    document.addEventListener("focusin", keepFocusInDialog)
+    document.addEventListener("keydown", handleKeyDown, true)
+
+    return () => {
+      document.removeEventListener("focusin", keepFocusInDialog)
+      document.removeEventListener("keydown", handleKeyDown, true)
+      document.body.style.overflow = previousBodyOverflow
+
+      if (focusTarget?.isConnected) {
+        focusTarget.focus({ preventScroll: true })
+      }
+    }
+  }, [onClose, returnFocusRef])
+
   return (
     <div
       className="fixed inset-0 z-50 flex justify-center overflow-y-auto bg-black/70 p-3 max-md:items-start max-md:pt-[max(0.75rem,env(safe-area-inset-top))] max-md:pb-[max(0.75rem,env(safe-area-inset-bottom))] md:items-center md:p-4"
@@ -30,15 +101,18 @@ export default function JobModal({
     >
 
       <div
+        ref={dialogRef}
         className="card-surface relative my-4 w-full min-w-0 max-w-3xl max-md:max-h-[calc(100dvh-1.75rem)] max-md:overflow-y-auto max-md:overscroll-contain px-4 pb-4 pt-3 md:my-8 md:max-h-none md:overflow-visible md:p-8"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
+        tabIndex={-1}
         aria-modal="true"
         aria-labelledby="job-modal-title"
       >
 
         <div className="mb-1 flex flex-row-reverse items-start gap-2 md:mb-2 md:gap-3">
           <button
+            ref={closeButtonRef}
             type="button"
             onClick={onClose}
             className="shrink-0 rounded p-1 text-xl leading-none text-stone-400 hover:text-white md:p-1.5"

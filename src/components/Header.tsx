@@ -1,6 +1,45 @@
+import { useEffect, useRef, useState } from "react"
+
+const navigationItems = [
+  { label: "Probate", href: "/#probate" },
+  { label: "Domestic", href: "/#domestic" },
+  { label: "Commercial", href: "/#commercial" },
+  { label: "Jobs", href: "/#jobs" },
+  { label: "Contact", href: "/#contact" },
+] as const
+
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    if (!menuOpen) return
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return
+
+      setMenuOpen(false)
+      menuButtonRef.current?.focus()
+    }
+
+    const closeOnOutsidePointer = (event: PointerEvent) => {
+      if (headerRef.current?.contains(event.target as Node)) return
+
+      setMenuOpen(false)
+    }
+
+    document.addEventListener("keydown", closeOnEscape)
+    document.addEventListener("pointerdown", closeOnOutsidePointer)
+
+    return () => {
+      document.removeEventListener("keydown", closeOnEscape)
+      document.removeEventListener("pointerdown", closeOnOutsidePointer)
+    }
+  }, [menuOpen])
+
   return (
-    <header className="site-surface sticky top-0 z-50">
+    <header ref={headerRef} className="site-surface sticky top-0 z-50">
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex items-center justify-between">
 
@@ -30,48 +69,41 @@ export default function Header() {
         </a>
 
 
-        <div className="ml-3 flex shrink-0 items-center gap-5 md:gap-6">
+        <div className="ml-3 flex shrink-0 items-center gap-2 sm:gap-3 lg:gap-6">
 
           {/* Navigation */}
 
-          <nav className="hidden md:flex gap-8 text-sm text-text-muted">
+          <nav className="hidden gap-8 text-sm text-text-muted lg:flex" aria-label="Primary navigation">
 
-            <a
-              href="/#probate"
-              className="hover:text-white transition-colors"
-            >
-              Probate
-            </a>
-
-            <a
-              href="/#domestic"
-              className="hover:text-white transition-colors"
-            >
-              Domestic
-            </a>
-
-            <a
-              href="/#commercial"
-              className="hover:text-white transition-colors"
-            >
-              Commercial
-            </a>
-
-            <a
-              href="/#jobs"
-              className="hover:text-white transition-colors"
-            >
-              Jobs
-            </a>
-
-            <a
-              href="/#contact"
-              className="hover:text-white transition-colors"
-            >
-              Contact
-            </a>
+            {navigationItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="hover:text-white transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
 
           </nav>
+
+          <button
+            ref={menuButtonRef}
+            type="button"
+            className="inline-flex shrink-0 items-center justify-center rounded-md border border-border-soft p-2 text-text-muted transition-colors hover:border-stone-500 hover:text-white lg:hidden"
+            aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              {menuOpen ? (
+                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              ) : (
+                <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              )}
+            </svg>
+          </button>
 
           <a
             href="https://wa.me/447459420152"
@@ -89,6 +121,25 @@ export default function Header() {
           </a>
 
         </div>
+
+        {menuOpen && (
+          <nav
+            id="mobile-navigation"
+            className="site-surface absolute right-4 top-full mt-2 w-52 rounded-lg border border-border-soft p-2 text-sm text-text-muted shadow-2xl sm:right-6 lg:hidden"
+            aria-label="Primary navigation"
+          >
+            {navigationItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="block rounded-md px-4 py-3 transition-colors hover:bg-white/5 hover:text-white focus:bg-white/5 focus:text-white"
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        )}
 
       </div>
 

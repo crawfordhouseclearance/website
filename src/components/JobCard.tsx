@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import JobModal, { type JobModalImage } from "./JobModal"
 
 type JobCardProps = {
@@ -30,12 +30,14 @@ export default function JobCard({
 }: JobCardProps) {
 
   const [open, setOpen] = useState(false)
+  const cardRef = useRef<HTMLDivElement>(null)
   const [previewBefore, previewAfter] = previews
   const [previewBeforeAlt, previewAfterAlt] = previewAlts
 
   return (
     <>
       <div
+        ref={cardRef}
         className="card-surface overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer flex min-h-0 flex-1 flex-col"
         onClick={() => setOpen(true)}
         onKeyDown={(e) => {
@@ -102,6 +104,7 @@ export default function JobCard({
           details={details}
           images={modalImages}
           onClose={() => setOpen(false)}
+          returnFocusRef={cardRef}
         />
       )}
     </>

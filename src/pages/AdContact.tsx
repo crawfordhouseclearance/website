@@ -33,7 +33,7 @@ export default function AdContact() {
               <p className="text-text-muted max-w-xl mx-auto leading-relaxed">
                 Probate, domestic and commercial house clearances across Falkirk,
                 Stirling and Central Scotland. Share the property location and
-                what needs cleared and we’ll come back with a clear quote.
+                what needs to be cleared and we’ll come back with a clear quote.
               </p>
 
             </div>
