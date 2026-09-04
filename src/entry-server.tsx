@@ -1,6 +1,6 @@
 import { renderToString } from "react-dom/server"
 import { StaticRouter } from "react-router-dom"
-import { AppRoutes } from "./App"
+import { AppContent } from "./App"
 import { getPageMetaForPath } from "./seo/pageMeta"
 
 export const prerenderPaths = [
@@ -24,7 +24,7 @@ export function render(url: string) {
   return {
     html: renderToString(
       <StaticRouter location={url}>
-        <AppRoutes />
+        <AppContent />
       </StaticRouter>,
     ),
     meta,

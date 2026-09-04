@@ -155,11 +155,14 @@ export default function Privacy() {
                 Cookies and website data
               </h2>
               <p>
-                This website uses Google Ads measurement technology to measure whether
-                advertising leads to enquiries or conversions. Google Ads measurement
-                technology may use cookies or similar technologies depending on your
-                browser, device and settings. This involves third-party technology provided
-                by Google.
+                Google Ads measurement is optional and only runs after you accept optional
+                cookies. It helps us understand whether advertising leads to enquiries or
+                conversions. If you reject optional cookies, this optional measurement does
+                not run. We use a first-party preference cookie to remember your choice; you
+                can change it later using the Cookie settings control in the footer. Google
+                Ads measurement technology may use cookies or similar technologies depending
+                on your browser, device and settings. This involves third-party technology
+                provided by Google.
               </p>
             </section>
 

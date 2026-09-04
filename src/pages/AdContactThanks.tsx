@@ -2,21 +2,33 @@ import { useEffect } from "react"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import { applyPageMeta } from "../seo/pageMeta"
+import { consumeAdConversionMarker } from "../consent/adConversionMarker"
+import {
+  ensureAdsMeasurement,
+  hasAcceptedAdsConsent,
+  useAdsConsent,
+} from "../consent/adsConsent"
 
 export default function AdContactThanks() {
+  const { consent } = useAdsConsent()
+
   useEffect(() => {
     applyPageMeta("ad-contact-thanks")
-
-    // Google Ads conversion event for "Submit lead form (1)".
-    // Fires on mount because this route is reached only after a successful
-    // lead-form submission (see AdContact -> navigate('/ad-contact/thanks')).
-    const w = window as unknown as { gtag?: (...args: unknown[]) => void }
-    w.gtag?.("event", "conversion", {
-      send_to: "AW-18178004943/spWfCMm88rAcEM-v-dtD",
-      value: 1.0,
-      currency: "GBP",
-    })
   }, [])
+
+  useEffect(() => {
+    if (consent !== "accepted" || !consumeAdConversionMarker()) return
+
+    void ensureAdsMeasurement().then((loaded) => {
+      if (!loaded || !hasAcceptedAdsConsent()) return
+
+      window.gtag?.("event", "conversion", {
+        send_to: "AW-18178004943/spWfCMm88rAcEM-v-dtD",
+        value: 1.0,
+        currency: "GBP",
+      })
+    })
+  }, [consent])
 
   return (
     <>

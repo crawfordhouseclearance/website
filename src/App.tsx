@@ -4,6 +4,8 @@ import { applyPageMeta } from "./seo/pageMeta"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Footer from "./components/Footer"
+import CookieConsentBanner from "./components/CookieConsentBanner"
+import { AdsConsentProvider } from "./consent/adsConsent"
 
 import Services from "./sections/Services"
 import Probate from "./sections/Probate"
@@ -146,10 +148,19 @@ export function AppRoutes() {
   )
 }
 
+export function AppContent() {
+  return (
+    <AdsConsentProvider>
+      <AppRoutes />
+      <CookieConsentBanner open={false} onChoice={() => undefined} showWhenUndecided />
+    </AdsConsentProvider>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
-      <AppRoutes />
+      <AppContent />
     </BrowserRouter>
   )
 }

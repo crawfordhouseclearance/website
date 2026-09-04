@@ -1,4 +1,9 @@
+import { useState } from "react"
+import CookieConsentBanner from "./CookieConsentBanner"
+
 function Footer() {
+  const [settingsOpen, setSettingsOpen] = useState(false)
+
   return (
     <footer className="bg-[var(--color-chrome)] section-divider mt-24 py-16">
 
@@ -132,9 +137,25 @@ function Footer() {
           >
             Privacy Policy
           </a>
+          <span className="mx-2" aria-hidden="true">
+            ·
+          </span>
+          <button
+            type="button"
+            onClick={() => setSettingsOpen(true)}
+            className="text-stone-500 underline-offset-2 hover:text-stone-400 hover:underline"
+          >
+            Cookie settings
+          </button>
         </div>
 
       </div>
+
+      <CookieConsentBanner
+        open={settingsOpen}
+        onChoice={() => setSettingsOpen(false)}
+        showWhenUndecided={false}
+      />
 
     </footer>
   )

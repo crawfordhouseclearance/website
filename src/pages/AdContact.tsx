@@ -4,9 +4,12 @@ import ContactForm from "../components/ContactForm"
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import { applyPageMeta } from "../seo/pageMeta"
+import { markAdConversion } from "../consent/adConversionMarker"
+import { useAdsConsent } from "../consent/adsConsent"
 
 export default function AdContact() {
   const navigate = useNavigate()
+  const { consent } = useAdsConsent()
 
   useEffect(() => {
     applyPageMeta("ad-contact")
@@ -65,7 +68,10 @@ export default function AdContact() {
             </div>
 
 
-            <ContactForm onSuccess={() => navigate("/ad-contact/thanks")} />
+            <ContactForm onSuccess={() => {
+              if (consent === "accepted") markAdConversion()
+              navigate("/ad-contact/thanks")
+            }} />
 
           </div>
 
