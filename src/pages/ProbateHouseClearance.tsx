@@ -109,7 +109,7 @@ export default function ProbateHouseClearance() {
       <ServicePageLayout
         breadcrumbLabel="Probate House Clearance"
         eyebrow="Falkirk, Stirling and Central Scotland"
-        title="Probate and Bereavement House Clearance"
+        title="Probate House Clearance Across Central Scotland"
         introduction="A steady, respectful clearance service for families, executors and professionals. We agree what stays, what is removed and how the property should be left before work begins."
         imageSrc="/images/web/service_probate_01.webp"
         imageAlt="Furnished room before a probate house clearance"
@@ -158,10 +158,15 @@ export default function ProbateHouseClearance() {
                 Coordinated Around the People Involved
               </h2>
               <p className="mt-5 leading-relaxed text-text-muted">
-                We can work with the family directly or coordinate with an
-                executor, solicitor or estate agent where that makes the
-                process simpler. Access, keys, items to retain and the final
-                handover are agreed before the clearance.
+                We can work with the family directly or coordinate with an{" "}
+                <a
+                  href="/professionals"
+                  className="text-stone-200 underline underline-offset-4 hover:text-white"
+                >
+                  executor, solicitor or estate agent
+                </a>{" "}
+                where that makes the process simpler. Access, keys, items to
+                retain and the final handover are agreed before the clearance.
               </p>
               <p className="mt-5 leading-relaxed text-text-muted">
                 In Scotland, the legal process is called confirmation—the
@@ -211,6 +216,16 @@ export default function ProbateHouseClearance() {
                   probate process. Usable items were separated where
                   appropriate, general waste was taken to licensed waste
                   facilities and the property was left ready for handover.
+                </p>
+                <p className="mt-5 leading-relaxed text-text-muted">
+                  The same approach is used for estates and family homes in{" "}
+                  <a
+                    href="/house-clearance-falkirk"
+                    className="text-stone-200 underline underline-offset-4 hover:text-white"
+                  >
+                    Falkirk and the surrounding area
+                  </a>
+                  .
                 </p>
                 <a
                   href="/house-clearance-stirling"

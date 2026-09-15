@@ -9,8 +9,14 @@ export default function Services() {
         </h2>
 
         <p className="text-stone-400 mt-4 mb-16">
-          Fully insured clearances across Falkirk, Stirling, Larbert,
-          Grangemouth and Central Scotland.
+          Fully insured clearances across{" "}
+          <a
+            href="/house-clearance-falkirk"
+            className="text-stone-200 underline underline-offset-4 hover:text-white"
+          >
+            Falkirk
+          </a>
+          , Stirling, Larbert, Grangemouth and Central Scotland.
         </p>
 
         <div className="grid md:grid-cols-3 gap-10">

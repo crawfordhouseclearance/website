@@ -27,7 +27,7 @@ const privacy: PageMeta = {
 }
 
 const probateHouseClearance: PageMeta = {
-  title: "Probate House Clearance in Falkirk & Stirling | Crawford",
+  title: "Probate House Clearance | Falkirk, Stirling & Central Scotland",
   description:
     "Respectful probate and bereavement house clearance for families, executors and professionals across Falkirk, Stirling and Central Scotland.",
   path: "/probate-house-clearance",
@@ -43,7 +43,7 @@ const houseClearance: PageMeta = {
 const falkirkHouseClearance: PageMeta = {
   title: "House Clearance Falkirk | Crawford House Clearance",
   description:
-    "Full and partial house clearance in Falkirk for homes, landlords and managed properties, with agreed pricing and licensed waste removal.",
+    "Full or partial house clearance in Falkirk, Larbert and Grangemouth. Scope and price agreed before we start, with waste removed through licensed facilities.",
   path: "/house-clearance-falkirk",
 }
 

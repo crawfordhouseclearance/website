@@ -219,7 +219,9 @@ export default function FalkirkHouseClearance() {
                   Crawford House Clearance works across Falkirk, Larbert,
                   Grangemouth and the surrounding Central Scotland service
                   area. If the property is nearby, send the postcode and we
-                  will confirm coverage.
+                  will confirm coverage. Clearances are fully insured, and
+                  Crawford House Clearance is a SEPA-registered waste carrier,
+                  registration WCR/R/3023449.
                 </p>
                 <p className="mt-5 leading-relaxed text-text-muted">
                   For an estate clearance, see our dedicated{" "}
