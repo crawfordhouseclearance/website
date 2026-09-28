@@ -79,7 +79,7 @@ function loadAdsScript(): Promise<boolean> {
 
     if (!existing) {
       script.async = true
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${ADS_ID}`
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`
       script.dataset.chcGoogleAds = ADS_ID
       script.addEventListener("load", complete, { once: true })
       script.addEventListener("error", failed, { once: true })
