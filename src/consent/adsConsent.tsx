@@ -11,6 +11,7 @@ import {
 export type AdsConsentState = "undecided" | "accepted" | "rejected"
 
 const ADS_ID = "AW-18178004943"
+const GA4_ID = "G-ESDPSCP5QB"
 const COOKIE_NAME = "chc_ads_consent"
 const ACCEPTED_COOKIE_VALUE = "v1:accepted"
 const REJECTED_COOKIE_VALUE = "v1:rejected"
@@ -27,6 +28,7 @@ declare global {
 
 let adsScriptPromise: Promise<boolean> | undefined
 let adsConfigured = false
+let analyticsConfigured = false
 let adsInitialised = false
 let adsConsentGranted = false
 
@@ -97,7 +99,7 @@ function loadAdsScript(): Promise<boolean> {
   return adsScriptPromise
 }
 
-/** Starts BASIC Consent Mode only after the visitor has accepted optional Ads cookies. */
+/** Starts BASIC Consent Mode only after the visitor has accepted optional Google measurement cookies. */
 // eslint-disable-next-line react-refresh/only-export-components
 export function ensureAdsMeasurement(): Promise<boolean> {
   if (typeof window === "undefined") return Promise.resolve(false)
@@ -120,7 +122,7 @@ export function ensureAdsMeasurement(): Promise<boolean> {
       ad_storage: "granted",
       ad_user_data: "granted",
       ad_personalization: "denied",
-      analytics_storage: "denied",
+      analytics_storage: "granted",
     })
   }
 
@@ -130,7 +132,27 @@ export function ensureAdsMeasurement(): Promise<boolean> {
     gtag("config", ADS_ID)
   }
 
+  if (!analyticsConfigured) {
+    analyticsConfigured = true
+    gtag("config", GA4_ID, { send_page_view: false })
+  }
+
   return script
+}
+
+// eslint-disable-next-line react-refresh/only-export-components
+export function trackAnalyticsPageView() {
+  if (typeof window === "undefined" || !hasAcceptedAdsConsent()) return
+
+  void ensureAdsMeasurement().then((loaded) => {
+    if (!loaded || !hasAcceptedAdsConsent()) return
+
+    window.gtag?.("event", "page_view", {
+      page_location: window.location.href,
+      page_path: window.location.pathname + window.location.search,
+      page_title: document.title,
+    })
+  })
 }
 
 function denyAdsMeasurement() {

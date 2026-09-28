@@ -33,7 +33,7 @@ export default function CookieConsentBanner({ open, onChoice, showWhenUndecided 
       <div className="mx-auto max-w-2xl rounded-lg border border-border-soft bg-[var(--color-chrome)] p-4 shadow-2xl sm:p-6">
         <h2 className="text-lg font-semibold text-white">Optional cookies</h2>
         <p className="mt-2 text-sm leading-relaxed text-text-muted">
-          We use optional Google Ads measurement to understand whether our advertising leads to enquiries. You can accept or reject it. {" "}
+          We use optional Google Analytics and Google Ads measurement to understand how visitors use the site and whether advertising leads to enquiries. You can accept or reject it. {" "}
           <Link to="/privacy" className="text-text-main underline underline-offset-2 hover:text-white">
             Privacy Policy
           </Link>

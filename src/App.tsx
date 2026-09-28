@@ -5,7 +5,11 @@ import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Footer from "./components/Footer"
 import CookieConsentBanner from "./components/CookieConsentBanner"
-import { AdsConsentProvider } from "./consent/adsConsent"
+import {
+  AdsConsentProvider,
+  trackAnalyticsPageView,
+  useAdsConsent,
+} from "./consent/adsConsent"
 
 import Services from "./sections/Services"
 import Probate from "./sections/Probate"
@@ -148,10 +152,28 @@ export function AppRoutes() {
   )
 }
 
+function GoogleMeasurementRouteTracker() {
+  const { pathname, search } = useLocation()
+  const { consent } = useAdsConsent()
+
+  useEffect(() => {
+    if (consent !== "accepted") return
+
+    const frame = window.requestAnimationFrame(() => {
+      trackAnalyticsPageView()
+    })
+
+    return () => window.cancelAnimationFrame(frame)
+  }, [consent, pathname, search])
+
+  return null
+}
+
 export function AppContent() {
   return (
     <AdsConsentProvider>
       <AppRoutes />
+      <GoogleMeasurementRouteTracker />
       <CookieConsentBanner open={false} onChoice={() => undefined} showWhenUndecided />
     </AdsConsentProvider>
   )
