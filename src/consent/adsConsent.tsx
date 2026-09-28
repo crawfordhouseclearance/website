@@ -58,7 +58,11 @@ function storeConsent(state: Exclude<AdsConsentState, "undecided">) {
 
 function getGtag(): Gtag {
   window.dataLayer = window.dataLayer ?? []
-  window.gtag = window.gtag ?? ((...args: unknown[]) => window.dataLayer?.push(args))
+  window.gtag = window.gtag ?? function gtag() {
+    // gtag.js expects the native Arguments object, not a rest-parameter array.
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer?.push(arguments)
+  }
   return window.gtag
 }
 
