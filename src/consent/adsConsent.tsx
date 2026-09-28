@@ -114,6 +114,7 @@ export function ensureAdsMeasurement(): Promise<boolean> {
       ad_personalization: "denied",
       analytics_storage: "denied",
     })
+    gtag("js", new Date())
   }
 
   if (!adsConsentGranted) {
