@@ -1,4 +1,4 @@
-﻿type PostHogClient = (typeof import("posthog-js"))["default"]
+type PostHogClient = (typeof import("posthog-js"))["default"]
 
 const POSTHOG_TOKEN = "phc_m0oQNs7i5oTnuIlggVDeU9dXSdB5wvlEeumjHXuXuQI"
 const POSTHOG_HOST = "https://eu.i.posthog.com"
@@ -39,7 +39,9 @@ export async function ensurePostHogMeasurement() {
     return
   }
 
-  posthog.opt_in_capturing()
+  if (posthog.has_opted_out_capturing()) {
+    posthog.opt_in_capturing()
+  }
   posthog.startSessionRecording()
 }
 
