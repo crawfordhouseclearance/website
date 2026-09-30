@@ -1,4 +1,5 @@
 import ContactForm from "../components/ContactForm"
+import { capturePostHog } from "../analytics/posthog"
 
 export default function Contact() {
   return (
@@ -27,6 +28,7 @@ export default function Contact() {
 
           <a
             href="tel:07459420152"
+            onClick={() => capturePostHog("phone_clicked", { source: "contact_section" })}
             className="inline-block text-center bg-cta text-brand-deep px-8 py-4 rounded-lg font-semibold hover:bg-cta-hover transition"
           >
             Call 07459 420152
@@ -34,6 +36,7 @@ export default function Contact() {
 
           <a
             href="https://wa.me/447459420152"
+            onClick={() => capturePostHog("whatsapp_clicked", { source: "contact_section" })}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-border-soft px-6 py-3.5 text-sm font-medium text-text-muted hover:text-text-main hover:border-stone-500 transition-colors"

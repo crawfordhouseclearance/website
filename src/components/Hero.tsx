@@ -1,3 +1,5 @@
+import { capturePostHog } from "../analytics/posthog"
+
 export default function Hero() {
   return (
     <section
@@ -30,6 +32,7 @@ export default function Hero() {
         <div className="mt-2.5 md:mt-7 flex justify-center md:justify-start">
           <a
             href="#contact"
+            onClick={() => capturePostHog("quote_cta_clicked", { source: "hero" })}
             className="inline-block bg-cta text-brand-deep px-5 py-2 md:px-6 md:py-3 rounded-lg font-medium text-sm md:text-base shadow-xl shadow-black/50 ring-2 ring-white/35 hover:bg-cta-hover hover:shadow-2xl hover:shadow-black/60 hover:ring-white/50 transition-[background-color,box-shadow,ring-color,ring-opacity] duration-200"
           >
             Get a Quote

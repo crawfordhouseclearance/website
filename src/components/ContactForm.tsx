@@ -1,4 +1,5 @@
 import { useRef, useState, type FormEvent } from "react"
+import { capturePostHog } from "../analytics/posthog"
 
 /** Same-origin `/api/contact` on Vercel; override with VITE_CONTACT_API_URL for unusual setups */
 const CONTACT_API =
@@ -19,6 +20,13 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
   )
   const [errorMessage, setErrorMessage] = useState("")
   const submitInFlight = useRef(false)
+  const formStarted = useRef(false)
+
+  function handleInteraction() {
+    if (formStarted.current) return
+    formStarted.current = true
+    capturePostHog("quote_form_started")
+  }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -59,6 +67,8 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
         return
       }
 
+      capturePostHog("quote_form_submitted")
+
       if (onSuccess) {
         onSuccess()
         return
@@ -95,6 +105,7 @@ export default function ContactForm({ onSuccess }: ContactFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
+      onFocusCapture={handleInteraction}
       className="space-y-6 max-w-2xl mx-auto"
       aria-busy={status === "loading"}
     >

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { capturePostHog } from "../analytics/posthog"
 
 const navigationItems = [
   { label: "Probate", href: "/#probate" },
@@ -107,6 +108,7 @@ export default function Header() {
 
           <a
             href="https://wa.me/447459420152"
+            onClick={() => capturePostHog("whatsapp_clicked", { source: "header" })}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex shrink-0 items-center justify-center rounded-md border border-border-soft p-2 text-text-muted hover:text-white hover:border-stone-500 transition-colors"

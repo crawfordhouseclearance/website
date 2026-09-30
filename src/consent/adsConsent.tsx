@@ -7,6 +7,7 @@ import {
   useState,
   type ReactNode,
 } from "react"
+import { denyPostHogMeasurement, ensurePostHogMeasurement } from "../analytics/posthog"
 
 export type AdsConsentState = "undecided" | "accepted" | "rejected"
 
@@ -193,19 +194,24 @@ export function AdsConsentProvider({ children }: { children: ReactNode }) {
   }, [])
 
   useEffect(() => {
-    if (consent === "accepted") void ensureAdsMeasurement()
+    if (consent === "accepted") {
+      void ensureAdsMeasurement()
+      void ensurePostHogMeasurement()
+    }
   }, [consent])
 
   const accept = useCallback(() => {
     storeConsent("accepted")
     setConsent("accepted")
     void ensureAdsMeasurement()
+    void ensurePostHogMeasurement()
   }, [])
 
   const reject = useCallback(() => {
     storeConsent("rejected")
     setConsent("rejected")
     denyAdsMeasurement()
+    denyPostHogMeasurement()
   }, [])
 
   const value = useMemo(() => ({ consent, accept, reject }), [consent, accept, reject])

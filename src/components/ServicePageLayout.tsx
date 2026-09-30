@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import { capturePostHog } from "../analytics/posthog"
 import ContactForm from "./ContactForm"
 import Footer from "./Footer"
 import Header from "./Header"
@@ -58,12 +59,14 @@ export default function ServicePageLayout({
                 <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                   <a
                     href="tel:07459420152"
+                    onClick={() => capturePostHog("phone_clicked", { source: "service_page" })}
                     className="inline-flex items-center justify-center rounded-lg bg-cta px-7 py-3.5 font-semibold text-brand-deep transition hover:bg-cta-hover"
                   >
                     Call 07459 420152
                   </a>
                   <a
                     href="https://wa.me/447459420152"
+                    onClick={() => capturePostHog("whatsapp_clicked", { source: "service_page" })}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center rounded-lg border border-border-soft px-7 py-3.5 font-medium text-text-main transition hover:border-stone-500 hover:text-white"

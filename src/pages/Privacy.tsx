@@ -15,7 +15,7 @@ export default function Privacy() {
       <main>
         <section className="py-24">
           <div className="max-w-4xl mx-auto px-6 text-left">
-            <p className="text-xs text-text-muted mb-8">Last updated: 28 September 2026</p>
+            <p className="text-xs text-text-muted mb-8">Last updated: 30 September 2026</p>
 
             <h1 className="text-3xl font-semibold text-white mb-10">Privacy Policy</h1>
 
@@ -155,15 +155,17 @@ export default function Privacy() {
                 Cookies and website data
               </h2>
               <p>
-                Google Analytics and Google Ads measurement are optional and only run after
-                you accept optional cookies. Google Analytics helps us understand how visitors
-                use the website, while Google Ads measurement helps us understand whether
-                advertising leads to enquiries or conversions. If you reject optional cookies,
-                this optional measurement does not run. We use a first-party preference cookie
-                to remember your choice; you can change it later using the Cookie settings
-                control in the footer. Google measurement technology may use cookies or similar
-                technologies depending on your browser, device and settings. This involves
-                third-party technology provided by Google.
+                Google Analytics, Google Ads measurement and PostHog analytics are optional and only run after
+                you accept optional cookies. Google Analytics and PostHog help us understand how visitors
+                use the website; PostHog may also record privacy-masked session replays and heatmap
+                interactions so we can identify usability problems. Form input values are masked in
+                session replay and we do not use PostHog to identify visitors by name or email. Google
+                Ads measurement helps us understand whether advertising leads to enquiries or conversions.
+                If you reject optional cookies, this optional measurement does not run. We use a first-party
+                preference cookie to remember your choice; you can change it later using the Cookie settings
+                control in the footer. Google and PostHog measurement technology may use cookies or similar
+                technologies depending on your browser, device and settings. IP addresses are discarded from
+                PostHog event data by our project settings.
               </p>
             </section>
 
